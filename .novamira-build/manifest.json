@@ -1,0 +1,56 @@
+{
+  "generated_by": "build_elements.py",
+  "files": [
+    {
+      "file": "header.json",
+      "description": "Sticky site header with logo, nav, phone and primary CTA",
+      "element_count": 14
+    },
+    {
+      "file": "footer.json",
+      "description": "Footer CTA band, white logo, copyright",
+      "element_count": 14
+    },
+    {
+      "file": "home.json",
+      "description": "Home page: hero, reels, principles, services, stats, reviews",
+      "element_count": 152
+    },
+    {
+      "file": "sluzby.json",
+      "description": "Services overview with pipeline steps",
+      "element_count": 61
+    },
+    {
+      "file": "audit.json",
+      "description": "Gen Z Audit service detail page",
+      "element_count": 44
+    },
+    {
+      "file": "strategie.json",
+      "description": "Content strategy service detail page",
+      "element_count": 44
+    },
+    {
+      "file": "core.json",
+      "description": "Core Offer service detail page",
+      "element_count": 44
+    },
+    {
+      "file": "reference.json",
+      "description": "Doctor Optic case study and reels",
+      "element_count": 56
+    },
+    {
+      "file": "onas.json",
+      "description": "About page with team and principles",
+      "element_count": 42
+    },
+    {
+      "file": "kontakt.json",
+      "description": "Lead CTA page with phone; questionnaire placeholder",
+      "element_count": 9
+    }
+  ],
+  "total_elements": 480
+}

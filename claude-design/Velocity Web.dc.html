@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/tokens/colors.css">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/tokens/typography.css">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/tokens/radius.css">
+<link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/styles.css">
+<script src="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/_ds_bundle.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--bedrock); }
+  ::selection { background: var(--voltage); color: var(--bedrock); }
+  a { color: var(--voltage); text-decoration: none; }
+  a:hover { color: var(--voltage-deep); }
+  .vx-navlink { color: var(--text-muted-inverse); transition: color 120ms ease; white-space: nowrap; }
+  .vx-cta-tel { white-space: nowrap; }
+  .vx-drop { position: relative; }
+  .vx-drop-panel { position: absolute; top: 100%; left: -14px; padding-top: 12px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 120ms ease, transform 120ms ease, visibility 120ms; }
+  .vx-drop:hover .vx-drop-panel, .vx-drop:focus-within .vx-drop-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+  .vx-drop-inner { width: 320px; background: #141414; border: 1px solid var(--border-inverse); border-radius: var(--radius-md); padding: 8px; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.7); }
+  .vx-drop-item { display: block; padding: 13px 14px; border-radius: var(--radius-sm); transition: background 120ms ease; }
+  .vx-drop-item:hover { background: var(--bedrock-700); }
+  .vx-caret { display: inline-block; margin-left: 5px; font-size: 10px; transition: transform 120ms ease; }
+  .vx-drop:hover .vx-caret { transform: rotate(180deg); }
+  .vx-navlink:hover, .vx-navlink[data-active="1"] { color: var(--voltage); }
+  .vx-reels { scrollbar-width: thin; scrollbar-color: var(--gray-600) transparent; }
+  .vx-reels::-webkit-scrollbar { height: 8px; }
+  .vx-reels::-webkit-scrollbar-thumb { background: var(--gray-600); border-radius: 999px; }
+  .vx-wrap { max-width: 1200px; margin: 0 auto; padding-left: 48px; padding-right: 48px; }
+  .vx-h1 { font-size: 96px; }
+  .vx-h2 { font-size: 56px; }
+  .vx-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .vx-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .vx-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+  .vx-desktopnav { display: flex; }
+  .vx-mobilebtn { display: none; }
+  @media (max-width: 900px) {
+    .vx-wrap { padding-left: 22px; padding-right: 22px; }
+    .vx-h1 { font-size: 50px !important; }
+    .vx-h2 { font-size: 34px !important; }
+    .vx-grid3, .vx-grid4, .vx-split { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .vx-svc-row { grid-template-columns: 1fr !important; gap: 12px !important; padding: 28px !important; }
+    .vx-svc-num { font-size: 52px !important; }
+    .vx-reels { padding-left: 22px !important; padding-right: 22px !important; }
+    .vx-desktopnav { display: none; }
+    .vx-mobilebtn { display: inline-flex; }
+    .vx-heropad { padding-top: 56px !important; padding-bottom: 56px !important; }
+    .vx-secpad { padding-top: 56px !important; padding-bottom: 56px !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--bedrock); min-height: 100vh;">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(11,11,11,0.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-inverse);">
+    <div class="vx-wrap" style="display: flex; align-items: center; gap: 28px; padding-top: 14px; padding-bottom: 14px;">
+      <a href="#/home" onClick="{{ nav }}" style="display: flex; align-items: center; gap: 11px;">
+        <img src="assets/logo/velocity-voltage.svg" alt="Velocity" style="height: 30px; width: auto; display: block;">
+        <span style="font-family: var(--font-display); font-size: 26px; letter-spacing: 0.06em; color: var(--signal);">VELOCITY</span>
+      </a>
+      <nav class="vx-desktopnav" style="gap: 26px; margin-left: 32px; align-items: center;">
+        <a class="vx-navlink" href="#/home" data-active="{{ navHome }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">Home</a>
+        <div class="vx-drop">
+          <a class="vx-navlink" href="#/sluzby" data-active="{{ navSluzby }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">Služby<span class="vx-caret">▾</span></a>
+          <div class="vx-drop-panel">
+            <div class="vx-drop-inner">
+              <sc-for list="{{ serviceLinks }}" as="s" hint-placeholder-count="3">
+                <a class="vx-drop-item" href="{{ s.href }}" onClick="{{ nav }}">
+                  <span style="display: block; font-family: var(--font-display); font-size: 20px; letter-spacing: 0.02em; color: var(--signal);">{{ s.label }}</span>
+                  <span style="display: block; font-size: 12px; line-height: 1.45; color: var(--text-muted-inverse); margin-top: 3px;">{{ s.desc }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <a class="vx-navlink" href="#/reference" data-active="{{ navReference }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">Reference</a>
+        <a class="vx-navlink" href="#/onas" data-active="{{ navOnas }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">O nás</a>
+      </nav>
+      <div class="vx-desktopnav" style="gap: 10px; margin-left: auto; align-items: center;">
+        <a class="vx-cta-tel" href="tel:+420604620011" style="display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px; border: 1.5px solid var(--voltage); color: var(--voltage); font-weight: 600; font-size: 14px;">
+          <span style="font-family: var(--font-display); font-size: 20px; letter-spacing: 0.02em; line-height: 1;">604 620 011</span>
+        </a>
+        <a class="vx-cta-tel" href="#/kontakt" onClick="{{ openLead }}" style="display: inline-flex; align-items: center; padding: 12px 20px; background: var(--voltage); color: var(--bedrock); font-weight: 700; font-size: 14px;">Zjistěte, jestli jsme pro vás</a>
+      </div>
+      <button class="vx-mobilebtn" onClick="{{ toggleMenu }}" style="margin-left: auto; align-items: center; justify-content: center; width: 44px; height: 44px; background: transparent; border: 1.5px solid var(--border-inverse); color: var(--signal); font-size: 22px; cursor: pointer;">{{ menuGlyph }}</button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top: 1px solid var(--border-inverse); padding: 16px 22px 22px; display: flex; flex-direction: column; gap: 4px;">
+        <a class="vx-navlink" href="#/home" data-active="{{ navHome }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">Home</a>
+        <a class="vx-navlink" href="#/sluzby" data-active="{{ navSluzby }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">Služby</a>
+        <sc-for list="{{ serviceLinks }}" as="s" hint-placeholder-count="3">
+          <a class="vx-navlink" href="{{ s.href }}" onClick="{{ nav }}" style="font-size: 15px; padding: 6px 0 6px 16px; border-left: 1.5px solid var(--border-inverse); margin-left: 4px;">{{ s.label }}</a>
+        </sc-for>
+        <a class="vx-navlink" href="#/reference" data-active="{{ navReference }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">Reference</a>
+        <a class="vx-navlink" href="#/onas" data-active="{{ navOnas }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">O nás</a>
+        <a href="tel:+420604620011" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border: 1.5px solid var(--voltage); color: var(--voltage); font-weight: 600;">
+          <span style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.02em;">VOLEJTE 604 620 011</span>
+        </a>
+        <a href="#/kontakt" onClick="{{ openLead }}" style="display: flex; align-items: center; justify-content: center; padding: 15px; background: var(--voltage); color: var(--bedrock); font-weight: 700;">Zjistěte, jestli jsme pro vás</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <main>
+    <!-- ================= HOME ================= -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <section style="background: var(--bedrock); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(120% 90% at 82% 0%, rgba(203,255,30,0.10) 0%, rgba(203,255,30,0) 46%);"></div>
+        <div class="vx-wrap vx-heropad vx-split" style="padding-top: 104px; padding-bottom: 104px; position: relative;">
+          <div>
+            <div style="display: inline-flex; gap: 8px; margin-bottom: 22px;">
+              <span style="font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bedrock); background: var(--voltage); padding: 6px 11px;">Gen Z marketing</span>
+              <span style="font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal); border: 1px solid var(--border-inverse); padding: 6px 11px;">Kreativní agentura</span>
+            </div>
+            <h1 class="vx-h1" style="font-family: var(--font-display); line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0;">JAK PRODAT GENERACI,<br>KTERÁ NEKUPUJE OD <span style="color: var(--voltage);">NUDNÝCH ZNAČEK.</span></h1>
+            <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-inverse); max-width: 490px; margin: 24px 0 0;">Stavíme obsah pro generaci Z, který skutečně funguje — a dokážeme to čísly. Žádný náhodný obsah. Vše stojí na výzkumu a strategii.</p>
+            <div style="display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap;">
+              <a href="#/kontakt" onClick="{{ openLead }}" style="display: inline-flex; align-items: center; padding: 15px 28px; background: var(--voltage); color: var(--bedrock); font-weight: 700; font-size: 15px;">Zjistěte, jestli jsme pro vás</a>
+              <a href="#/reference" onClick="{{ nav }}" style="display: inline-flex; align-items: center; padding: 15px 28px; border: 1.5px solid var(--voltage); color: var(--voltage); font-weight: 600; font-size: 15px;">Naše výsledky</a>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <img src="assets/brand/chrome-v.png" alt="Velocity" style="width: 100%; max-width: 360px; filter: drop-shadow(0 24px 60px rgba(0,0,0,0.6));">
+          </div>
+        </div>
+      </section>
+
+      <!-- REELS ROLLER -->
+      <section style="background: var(--bedrock); border-top: 1px solid var(--border-inverse);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 72px; padding-bottom: 72px;">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 8px; flex-wrap: wrap;">
+            <div>
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 10px;">Naše práce</div>
+              <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0; color: var(--signal);">REELS, KTERÉ LIDÉ DOKOUKAJÍ</h2>
+            </div>
+            <p style="font-size: 15px; line-height: 1.55; color: var(--text-muted-inverse); max-width: 320px; margin: 0;">Reels pro e-commerce značky. Klikněte a pusťte se zvukem — tak jak je vidí generace Z ve feedu.</p>
+          </div>
+        </div>
+        <div class="vx-reels" style="display: flex; gap: 16px; overflow-x: auto; padding: 0 48px 40px; scroll-snap-type: x mandatory;">
+          <sc-for list="{{ reels }}" as="reel" hint-placeholder-count="5">
+            <div style="flex: 0 0 auto; width: 246px; scroll-snap-align: start;">
+              <div style="position: relative; width: 100%; aspect-ratio: 9 / 16; background: var(--bedrock-800); border: 1px solid var(--border-inverse); overflow: hidden;">
+                <iframe src="{{ reel.src }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen webkitallowfullscreen mozallowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="{{ reel.brand }}"></iframe>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                <span style="font-family: var(--font-display); font-size: 18px; letter-spacing: 0.03em; color: var(--signal);">{{ reel.brand }}</span>
+                <span style="font-size: 12px; color: var(--text-muted-inverse);">{{ reel.tag }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- PRINCIPLES: what we do / don't do -->
+      <section style="background: var(--signal); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(160deg, #ffffff 0%, var(--signal) 55%, #e9e9e7 100%);"></div>
+        <div class="vx-wrap vx-secpad" style="padding-top: 88px; padding-bottom: 88px; position: relative;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Jak pracujeme</div>
+          <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0 0 40px; color: var(--text-strong); max-width: 820px;">VÍME, CO JE NAŠE — A CO PODLE NÁS NEFUNGUJE</h2>
+          <div class="vx-split" style="grid-template-columns: 1fr 1fr; align-items: stretch;">
+            <div style="background: var(--bedrock); padding: 36px; border-radius: var(--radius-md);">
+              <div style="font-family: var(--font-display); font-size: 26px; letter-spacing: 0.03em; color: var(--voltage); margin-bottom: 22px;">CO DĚLÁME</div>
+              <sc-for list="{{ doList }}" as="line" hint-placeholder-count="5">
+                <div style="display: flex; gap: 14px; padding: 13px 0; border-top: 1px solid var(--border-inverse);">
+                  <span style="font-family: var(--font-display); color: var(--voltage); font-size: 20px; line-height: 1;">→</span>
+                  <span style="font-size: 15px; line-height: 1.5; color: var(--signal);">{{ line }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="background: var(--white); padding: 36px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="font-family: var(--font-display); font-size: 26px; letter-spacing: 0.03em; color: var(--text-strong); margin-bottom: 22px;">CO NEDĚLÁME</div>
+              <sc-for list="{{ dontList }}" as="line" hint-placeholder-count="5">
+                <div style="display: flex; gap: 14px; padding: 13px 0; border-top: 1px solid var(--border-subtle);">
+                  <span style="color: var(--text-muted); font-size: 20px; line-height: 1; font-weight: 300;">×</span>
+                  <span style="font-size: 15px; line-height: 1.5; color: var(--text-body);">{{ line }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES teaser -->
+      <section style="background: var(--white);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 88px; padding-bottom: 88px;">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 44px; flex-wrap: wrap;">
+            <div>
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Co děláme</div>
+              <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0; color: var(--text-strong);">TŘI KROKY K OBSAHU,<br>KTERÝ PRODÁVÁ</h2>
+            </div>
+            <a href="#/sluzby" onClick="{{ nav }}" style="display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border: 1.5px solid var(--bedrock); color: var(--bedrock); font-weight: 600; font-size: 14px;">Všechny služby →</a>
+          </div>
+          <div class="vx-grid3">
+            <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+              <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: linear-gradient(135deg, var(--surface-card) 0%, #e9e9e7 100%); box-shadow: var(--shadow-card); padding: 30px; display: flex; flex-direction: column; min-height: 240px;">
+                <span style="font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);">{{ s.step }}</span>
+                <div style="font-family: var(--font-display); font-size: 28px; letter-spacing: 0.02em; color: var(--text-strong); margin: 12px 0 10px;">{{ s.title }}</div>
+                <div style="font-size: 14px; line-height: 1.55; color: var(--text-muted);">{{ s.desc }}</div>
+                <div style="margin-top: auto; padding-top: 18px;"><span style="font-family: var(--font-display); font-size: 17px; letter-spacing: 0.03em; color: var(--voltage-deep);">{{ s.outcome }}</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS band -->
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 80px; padding-bottom: 80px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 10px;">Doctor Optic · Instagram organic</div>
+          <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0 0 44px; color: var(--signal);">ČÍSLA, NE POCITY</h2>
+          <div class="vx-grid4">
+            <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+              <div style="border-top: 2px solid var(--voltage); padding-top: 18px;">
+                <div style="font-family: var(--font-display); font-size: 58px; line-height: 0.9; letter-spacing: 0.01em; color: var(--signal);">{{ st.big }}</div>
+                <div style="font-size: 13px; line-height: 1.5; color: var(--text-muted-inverse); margin-top: 8px;">{{ st.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section style="background: var(--signal); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(90% 120% at 100% 0%, rgba(203,255,30,0.14) 0%, rgba(203,255,30,0) 45%);"></div>
+        <div class="vx-wrap vx-secpad" style="padding-top: 88px; padding-bottom: 88px; position: relative;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Co říkají klienti</div>
+          <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0 0 44px; color: var(--text-strong);">SPOLUPRÁCE, KTERÁ DÁVÁ SMYSL</h2>
+          <div class="vx-grid3">
+            <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+              <div style="background: var(--white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; display: flex; flex-direction: column;">
+                <div style="font-family: var(--font-display); font-size: 30px; color: var(--voltage-deep); line-height: 0.6; height: 22px;">"</div>
+                <p style="font-size: 15px; line-height: 1.6; color: var(--text-body); margin: 0 0 22px;">{{ r.quote }}</p>
+                <div style="margin-top: auto;">
+                  <div style="font-weight: 700; font-size: 14px; color: var(--text-strong);">{{ r.name }}</div>
+                  <div style="font-size: 13px; color: var(--text-muted);">{{ r.role }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <!-- ================= SLUŽBY ================= -->
+    <sc-if value="{{ isSluzby }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-heropad" style="padding-top: 84px; padding-bottom: 60px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 14px;">Služby</div>
+          <h1 class="vx-h1" style="font-family: var(--font-display); font-size: 76px; line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0; max-width: 900px;">TŘI KROKY. ŽÁDNÝ OBSAH BEZ STRATEGIE.</h1>
+          <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-inverse); max-width: 560px; margin: 24px 0 0;">Postupujeme vždy ve stejném pořadí. Nejdřív měříme, pak stavíme strategii, teprve potom tvoříme. Přeskočit kroky nejde — a to je záměr.</p>
+        </div>
+      </section>
+      <section style="background: var(--white);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 28px;">
+          <sc-for list="{{ servicesFull }}" as="s" hint-placeholder-count="3">
+            <a href="{{ s.href }}" onClick="{{ nav }}" class="vx-svc-row" style="border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: linear-gradient(135deg, #ffffff 0%, var(--signal) 100%); box-shadow: var(--shadow-card); padding: 40px; display: grid; grid-template-columns: 120px 1fr; gap: 32px; color: inherit;">
+              <div class="vx-svc-num" style="font-family: var(--font-display); font-size: 84px; line-height: 0.8; color: var(--voltage-deep);">{{ s.num }}</div>
+              <div>
+                <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+                  <div style="font-family: var(--font-display); font-size: 40px; letter-spacing: 0.02em; color: var(--text-strong); margin-bottom: 6px;">{{ s.title }}</div>
+                  <span style="font-family: var(--font-display); font-size: 24px; color: var(--voltage-deep);">→</span>
+                </div>
+                <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px;">{{ s.step }}</div>
+                <p style="font-size: 16px; line-height: 1.6; color: var(--text-body); max-width: 640px; margin: 0 0 20px;">{{ s.long }}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                  <sc-for list="{{ s.points }}" as="p" hint-placeholder-count="3">
+                    <span style="font-size: 13px; padding: 7px 13px; background: var(--bedrock); color: var(--signal); border-radius: var(--radius-pill);">{{ p }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 72px; padding-bottom: 72px;">
+          <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0 0 40px; color: var(--signal);">JAK PROBÍHÁ SPOLUPRÁCE</h2>
+          <div class="vx-grid4">
+            <sc-for list="{{ pipeline }}" as="p" hint-placeholder-count="5">
+              <div style="border-top: 2px solid var(--voltage); padding-top: 16px;">
+                <div style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.02em; color: var(--voltage); margin-bottom: 8px;">{{ p.k }}</div>
+                <div style="font-family: var(--font-display); font-size: 21px; letter-spacing: 0.02em; color: var(--signal); margin-bottom: 8px;">{{ p.t }}</div>
+                <div style="font-size: 13px; line-height: 1.5; color: var(--text-muted-inverse);">{{ p.d }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ================= SLUŽBA DETAIL ================= -->
+    <sc-if value="{{ isServiceDetail }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="background: var(--bedrock); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(120% 90% at 85% 0%, rgba(203,255,30,0.10) 0%, rgba(203,255,30,0) 46%);"></div>
+        <div class="vx-wrap vx-heropad" style="padding-top: 84px; padding-bottom: 64px; position: relative;">
+          <a href="#/sluzby" onClick="{{ nav }}" style="font-size: 13px; color: var(--text-muted-inverse); display: inline-block; margin-bottom: 20px;">← Všechny služby</a>
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+            <span style="font-family: var(--font-display); font-size: 30px; color: var(--voltage);">{{ svc.num }}</span>
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-inverse);">{{ svc.step }}</span>
+          </div>
+          <h1 class="vx-h1" style="font-family: var(--font-display); font-size: 82px; line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0; max-width: 880px;">{{ svc.title }}</h1>
+          <p style="font-size: 18px; line-height: 1.55; color: var(--text-muted-inverse); max-width: 620px; margin: 22px 0 0;">{{ svc.tagline }}</p>
+          <div style="display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap;">
+            <a href="#/kontakt" onClick="{{ openLead }}" style="display: inline-flex; align-items: center; padding: 15px 28px; background: var(--voltage); color: var(--bedrock); font-weight: 700; font-size: 15px;">Zjistěte, jestli jsme pro vás</a>
+            <a href="tel:+420604620011" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 24px; border: 1.5px solid var(--voltage); color: var(--voltage); font-weight: 600;">
+              <span style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.02em; line-height: 1;">604 620 011</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section style="background: var(--white);">
+        <div class="vx-wrap vx-secpad vx-split" style="padding-top: 80px; padding-bottom: 40px; grid-template-columns: 1fr 1fr; align-items: start;">
+          <div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">O co jde</div>
+            <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0; color: var(--text-strong);">{{ svc.h2 }}</h2>
+          </div>
+          <div>
+            <p style="font-size: 17px; line-height: 1.65; color: var(--text-body); margin: 0;">{{ svc.long }}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px;">
+              <sc-for list="{{ svc.points }}" as="p" hint-placeholder-count="3">
+                <span style="font-size: 13px; padding: 7px 13px; background: var(--bedrock); color: var(--signal); border-radius: var(--radius-pill);">{{ p }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div class="vx-wrap" style="padding-bottom: 80px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin: 8px 0 24px;">Co dostanete</div>
+          <div class="vx-grid3">
+            <sc-for list="{{ svc.benefits }}" as="b" hint-placeholder-count="3">
+              <div style="border-top: 2px solid var(--bedrock); padding-top: 18px;">
+                <div style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.02em; color: var(--text-strong); margin-bottom: 8px;">{{ b.t }}</div>
+                <div style="font-size: 14px; line-height: 1.55; color: var(--text-muted);">{{ b.d }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+      <section style="background: var(--signal);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 64px; padding-bottom: 64px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;">Další služby</div>
+          <div class="vx-split" style="grid-template-columns: 1fr 1fr;">
+            <sc-for list="{{ svc.others }}" as="o" hint-placeholder-count="2">
+              <a href="{{ o.href }}" onClick="{{ nav }}" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 26px 30px; color: inherit;">
+                <div>
+                  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">{{ o.num }} · {{ o.step }}</div>
+                  <div style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.02em; color: var(--text-strong);">{{ o.title }}</div>
+                </div>
+                <span style="font-family: var(--font-display); font-size: 26px; color: var(--voltage-deep);">→</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ================= REFERENCE ================= -->
+    <sc-if value="{{ isReference }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-heropad" style="padding-top: 84px; padding-bottom: 56px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 14px;">Case study</div>
+          <h1 class="vx-h1" style="font-family: var(--font-display); font-size: 80px; line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0; max-width: 880px;">DOCTOR OPTIC: <span style="color: var(--voltage);">750 000 VIEWS</span> Z 16 VIDEÍ</h1>
+          <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-inverse); max-width: 620px; margin: 24px 0 0;">Organický obsah na Instagramu, bez placené reklamy a dokonce bez přístupu do analytik. Ukázka toho, co umí strategie postavená na Gen Z skóre.</p>
+        </div>
+      </section>
+      <section style="background: var(--bedrock); border-top: 1px solid var(--border-inverse);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 40px; padding-bottom: 40px;">
+          <div class="vx-grid4">
+            <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+              <div style="border-top: 2px solid var(--voltage); padding-top: 16px;">
+                <div style="font-family: var(--font-display); font-size: 54px; line-height: 0.9; color: var(--signal);">{{ st.big }}</div>
+                <div style="font-size: 13px; line-height: 1.5; color: var(--text-muted-inverse); margin-top: 8px;">{{ st.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-secpad" style="padding-bottom: 24px;">
+          <h2 style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; color: var(--signal); margin: 0 0 6px;">VÝBĚR REELS</h2>
+        </div>
+        <div class="vx-reels" style="display: flex; gap: 16px; overflow-x: auto; padding: 0 48px 44px; scroll-snap-type: x mandatory;">
+          <sc-for list="{{ reels }}" as="reel" hint-placeholder-count="5">
+            <div style="flex: 0 0 auto; width: 246px; scroll-snap-align: start;">
+              <div style="position: relative; width: 100%; aspect-ratio: 9 / 16; background: var(--bedrock-800); border: 1px solid var(--border-inverse); overflow: hidden;">
+                <iframe src="{{ reel.src }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen webkitallowfullscreen mozallowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="{{ reel.brand }}"></iframe>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                <span style="font-family: var(--font-display); font-size: 18px; letter-spacing: 0.03em; color: var(--signal);">{{ reel.brand }}</span>
+                <span style="font-size: 12px; color: var(--text-muted-inverse);">{{ reel.tag }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="background: var(--signal);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 80px; padding-bottom: 80px;">
+          <div class="vx-split" style="grid-template-columns: 1fr 1fr; align-items: start;">
+            <div>
+              <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Jak jsme to udělali</div>
+              <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0; color: var(--text-strong);">STRATEGIE MÍSTO NÁHODY</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              <sc-for list="{{ caseSteps }}" as="c" hint-placeholder-count="3">
+                <div style="background: var(--white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 24px;">
+                  <div style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.02em; color: var(--text-strong); margin-bottom: 8px;">{{ c.t }}</div>
+                  <div style="font-size: 14px; line-height: 1.55; color: var(--text-muted);">{{ c.d }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ================= O NÁS ================= -->
+    <sc-if value="{{ isOnas }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-heropad" style="padding-top: 84px; padding-bottom: 60px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 14px;">O nás</div>
+          <h1 class="vx-h1" style="font-family: var(--font-display); font-size: 78px; line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0; max-width: 900px;">MĚŘÍME AUTENTICITU. STAVÍME OBSAH. PRODÁVÁME.</h1>
+          <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-inverse); max-width: 620px; margin: 24px 0 0;">Velocity je marketingová a kreativní agentura zaměřená na Gen Z obsah pro e-commerce značky. Malý tým, který dělá strategii, produkci i čísla.</p>
+        </div>
+      </section>
+      <section style="background: var(--bedrock); border-top: 1px solid var(--border-inverse);">
+        <div class="vx-wrap vx-secpad" style="padding-top: 64px; padding-bottom: 80px;">
+          <h2 style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; color: var(--signal); margin: 0 0 32px;">CORE TÝM</h2>
+          <div class="vx-grid4">
+            <sc-for list="{{ team }}" as="m" hint-placeholder-count="4">
+              <div>
+                <div style="aspect-ratio: 1; background-image: {{ m.bg }}; background-size: cover; background-position: center top; border-radius: var(--radius-sm); filter: grayscale(0.25) contrast(1.05);"></div>
+                <div style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.02em; color: var(--signal); margin-top: 14px;">{{ m.name }}</div>
+                <div style="font-size: 12px; color: var(--voltage); margin: 2px 0 6px;">{{ m.alias }}</div>
+                <div style="font-size: 13px; line-height: 1.5; color: var(--text-muted-inverse);">{{ m.role }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+      <section style="background: var(--signal); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(150deg, #ffffff 0%, var(--signal) 60%, #e9e9e7 100%);"></div>
+        <div class="vx-wrap vx-secpad" style="padding-top: 80px; padding-bottom: 80px; position: relative;">
+          <h2 class="vx-h2" style="font-family: var(--font-display); line-height: 0.9; letter-spacing: 0.02em; margin: 0 0 40px; color: var(--text-strong);">NA ČEM SI ZAKLÁDÁME</h2>
+          <div class="vx-grid3">
+            <sc-for list="{{ principles }}" as="p" hint-placeholder-count="3">
+              <div style="border-top: 2px solid var(--bedrock); padding-top: 18px;">
+                <div style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.02em; color: var(--text-strong); margin-bottom: 8px;">{{ p.t }}</div>
+                <div style="font-size: 14px; line-height: 1.55; color: var(--text-muted);">{{ p.d }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--bedrock); border-top: 1px solid var(--border-inverse);">
+    <div class="vx-wrap vx-secpad" style="padding-top: 64px; padding-bottom: 40px;">
+      <div class="vx-split" style="grid-template-columns: 1.4fr 1fr; align-items: center; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border-inverse);">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: clamp(30px, 7vw, 44px); line-height: 0.9; letter-spacing: 0.02em; color: var(--signal); margin: 0 0 10px;">ZJISTĚTE, JESTLI JSME PRO VÁS</h3>
+          <p style="font-size: 15px; line-height: 1.55; color: var(--text-muted-inverse); max-width: 440px; margin: 0;">Sedm otázek. Podle odpovědí poznáte, jestli dává spolupráce smysl — a my se vám ozveme.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="#/kontakt" onClick="{{ openLead }}" style="display: flex; align-items: center; justify-content: center; padding: 18px; background: var(--voltage); color: var(--bedrock); font-weight: 700; font-size: 15px;">Vyplnit dotazník</a>
+          <a href="tel:+420604620011" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 18px; border: 1.5px solid var(--voltage); color: var(--voltage);">
+            <span style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; line-height: 1;">604 620 011</span>
+          </a>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 28px; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 11px;">
+          <img src="assets/logo/velocity-white.svg" alt="Velocity" style="height: 26px; width: auto;">
+          <span style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.06em; color: var(--signal);">VELOCITY</span>
+        </div>
+        <span style="font-size: 13px; color: var(--text-muted-inverse);">© 2026 Velocity — marketingová &amp; kreativní agentura</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:800}}">
+class Component extends DCLogic {
+  state = { route: 'home', menuOpen: false };
+
+  componentDidMount() {
+    this._sync = () => {
+      const h = (location.hash || '').replace('#/', '').replace('#', '');
+      const r = ['home', 'sluzby', 'reference', 'onas', 'audit', 'strategie', 'core'].includes(h) ? h : 'home';
+      this.setState({ route: r, menuOpen: false });
+      window.scrollTo({ top: 0 });
+    };
+    window.addEventListener('hashchange', this._sync);
+    this._sync();
+  }
+  componentWillUnmount() { window.removeEventListener('hashchange', this._sync); }
+
+  go(route) {
+    if (location.hash !== '#/' + route) location.hash = '#/' + route;
+    else this.setState({ route, menuOpen: false });
+  }
+
+  reelSrc(id, autoplay) {
+    const base = 'https://player.vimeo.com/video/' + id + '?badge=0&autopause=0&player_id=0&app_id=58479&byline=0&title=0&portrait=0';
+    return autoplay ? base + '&background=1&autoplay=1&loop=1&muted=1' : base;
+  }
+
+  renderVals() {
+    const route = this.state.route;
+    const nav = (e) => {
+      const href = e.currentTarget.getAttribute('href') || '';
+      if (href.startsWith('#/')) { e.preventDefault(); this.go(href.slice(2)); }
+    };
+    const openLead = (e) => { e.preventDefault(); this.setState({ menuOpen: false }); alert('Dotazník „Zjistěte, jestli jsme pro vás" — 7 otázek. Formulář doplníme.'); };
+
+    const servicesFull = [
+      { slug: 'audit', href: '#/audit', num: '01', title: 'Gen Z Audit', step: 'Kde jste teď', h2: 'ZMĚŘÍME, KDE OBSAH ZTRÁCÍ POZORNOST',
+        tagline: 'Konec dohadů o „autentičnosti“. Dostanete jedno číslo a jasný seznam, kde začít.',
+        long: 'Změříme potenciál vašeho obsahu u generace Z. Váhované metriky z 50+ výzkumných zdrojů dají jedno číslo — Gen Z skóre — a seznam oblastí, na které se vyplatí zaměřit jako první. Funguje pro organiku i pro Meta Ads.',
+        points: ['Gen Z skóre', 'Akční plán priorit', 'Bez přístupu do analytik'],
+        benefits: [
+          { t: 'Gen Z skóre', d: 'Jedno srozumitelné číslo, které říká, jak váš obsah rezonuje u generace Z.' },
+          { t: 'Priority', d: 'Seznam oblastí, které mají největší dopad — víte přesně, kde začít.' },
+          { t: 'Rychlý výstup', d: 'Diagnostiku zvládneme i bez přístupu do vašich analytik.' },
+        ] },
+      { slug: 'strategie', href: '#/strategie', num: '02', title: 'Obsahová strategie', step: 'Kam jdeme', h2: 'STRATEGIE, ZE KTERÉ VZNIKÁ KAŽDÝ KUS OBSAHU',
+        tagline: 'Bez strategie nic dalšího neděláme. Je to základ všeho, co pak vyprodukujeme.',
+        long: 'Deep research na vaše odvětví, značku a konkurenci. Z toho postavíme témata, formáty a funnel pro TikTok, Instagram i Meta Ads. Dostanete content plán, se kterým ví celý tým, co, kdy a proč tvořit.',
+        points: ['Research odvětví', 'Témata & formáty', 'Content plán'],
+        benefits: [
+          { t: 'Deep research', d: 'Odvětví, značka a konkurence do hloubky — víme, s čím soupeříte.' },
+          { t: 'Témata & funnel', d: 'Formáty a témata napříč platformami, poskládané do funnelu.' },
+          { t: 'Content plán', d: 'Konkrétní kalendář, podle kterého se dá rovnou tvořit.' },
+        ] },
+      { slug: 'core', href: '#/core', num: '03', title: 'Core Offer', step: 'Jak to děláme', h2: '~20 KUSŮ OBSAHU MĚSÍČNĚ, KTERÝ PRODÁVÁ',
+        tagline: 'Scénáře, briefy a editing jsou na nás. Vy postujete a sledujete čísla.',
+        long: 'Zhruba 20 kusů obsahu měsíčně: short-form videa (high i low production), statiky, grafiky, carousely a AI images. Vedeme vás u natáčení, které zvládnete sami, a high-production točíme celý my. Otevřeni i částečně performance-based spolupráci.',
+        points: ['~20 kusů / měsíc', 'High + low production', 'Měsíční reporty'],
+        benefits: [
+          { t: 'Kompletní produkce', d: 'Videa, statiky, grafiky, carousely i AI images — celá měsíční várka.' },
+          { t: 'Scénáře a briefy', d: 'Píšeme scénáře, děláme briefy a editing. Vy jen natočíte a postnete.' },
+          { t: 'Reporty', d: 'Každý měsíc čísla, progress a jasný další krok.' },
+        ] },
+    ].map((s, _, arr) => ({ ...s, others: [] }));
+    servicesFull.forEach(s => { s.others = servicesFull.filter(o => o.slug !== s.slug).map(o => ({ href: o.href, num: o.num, step: o.step, title: o.title })); });
+    const serviceLinks = servicesFull.map(s => ({ label: s.title, href: s.href, desc: s.tagline }));
+    const svc = servicesFull.find(s => s.slug === route) || servicesFull[0];
+    const isServiceDetail = ['audit', 'strategie', 'core'].includes(route);
+    const navSluzby = (route === 'sluzby' || isServiceDetail) ? '1' : '0';
+
+    const reelDefs = [
+      { id: '1212116515', brand: 'FM Tennis', tag: 'Reel', autoplay: true },
+      { id: '1212120384', brand: 'Doctor Optic', tag: 'Reel' },
+      { id: '1212180498', brand: 'Speed Comp', tag: 'Reel' },
+      { id: '1212119129', brand: 'FM Tennis', tag: 'Reel' },
+      { id: '1212120267', brand: 'Doctor Optic', tag: 'Reel' },
+      { id: '1212180512', brand: 'Offblack', tag: 'Reel' },
+      { id: '1212119157', brand: 'Doctor Optic', tag: 'Reel' },
+      { id: '1212120193', brand: 'Doctor Optic', tag: 'Reel' },
+      { id: '1212119140', brand: 'Doctor Optic', tag: 'Reel' },
+      { id: '1212120322', brand: 'Doctor Optic', tag: 'Reel' },
+    ];
+    const reels = reelDefs.map(r => ({ brand: r.brand, tag: r.tag, src: this.reelSrc(r.id, !!r.autoplay) }));
+
+    return {
+      isHome: route === 'home', isSluzby: route === 'sluzby', isReference: route === 'reference', isOnas: route === 'onas',
+      isServiceDetail, svc, serviceLinks, servicesFull,
+      navHome: route === 'home' ? '1' : '0', navSluzby, navReference: route === 'reference' ? '1' : '0', navOnas: route === 'onas' ? '1' : '0',
+      menuOpen: this.state.menuOpen, menuGlyph: this.state.menuOpen ? '×' : '≡',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      nav, openLead, reels,
+
+      doList: [
+        'Diagnostikujeme obsah přes Gen Z skóre — měřitelně, ne od oka.',
+        'Stavíme obsahovou strategii na deep research o vás i konkurenci.',
+        'Píšeme scénáře, briefy a produkujeme ~20 kusů obsahu měsíčně.',
+        'Točíme high-production a vedeme vás u low-production natáčení.',
+        'Reportujeme čísla a pracujeme naostro s vaším marketing týmem.',
+      ],
+      dontList: [
+        'Neděláme jednorázové zakázky bez návaznosti.',
+        'Nepracujeme bez strategie jako základu.',
+        'Neděláme obsah pro klienty bez přístupu k datům.',
+        'Nekopírujeme obsah napříč platformami — to Gen Z pozná.',
+        'Neřešíme za vás postování — social management neděláme.',
+      ],
+
+      services: [
+        { step: 'Krok 1', title: 'Gen Z Audit', desc: 'Diagnostika vašeho obsahu. Výstupem je Gen Z skóre a jasný akční plán, kam se pustit první.', outcome: 'Výstup: Gen Z skóre' },
+        { step: 'Krok 2', title: 'Obsahová strategie', desc: 'Deep research na odvětví, vás a konkurenci. Témata, formáty a funnel. Staví na auditu.', outcome: 'Výstup: strategie + plán' },
+        { step: 'Krok 3', title: 'Core Offer', desc: '~20 kusů obsahu měsíčně — short-form videa, statiky, grafiky, carousely, AI images.', outcome: 'Výstup: obsah každý měsíc' },
+      ],
+      pipeline: [
+        { k: '01', t: 'Dotazník', d: 'Sesbíráme kontext o značce, cílech a datech.' },
+        { k: '02', t: 'Research', d: 'Odvětví, klient, konkurence — do hloubky.' },
+        { k: '03', t: 'Strategie', d: 'Témata, formáty a funnel. Content plán a kalendář.' },
+        { k: '04', t: 'Produkce', d: 'Brief → scénáře → natáčecí den → editing → kontrola.' },
+        { k: '05', t: 'Report', d: 'Čísla, progress a další krok. Každý měsíc.' },
+      ],
+
+      stats: [
+        { big: '750K', label: 'zhlédnutí z 16 videí' },
+        { big: '8 %', label: 'průměrný engagement rate' },
+        { big: '360K', label: 'views + 20K likes nejsilnější video' },
+        { big: '+1 500', label: 'nových followerů' },
+      ],
+      caseSteps: [
+        { t: 'Gen Z skóre napřed', d: 'Změřili jsme, kde obsah ztrácí pozornost, a určili priority. Žádné střílení naslepo.' },
+        { t: 'Hooky, které drží', d: 'Postavili jsme scénáře na pattern interruptech a open loopech — divák nemá důvod odscrollovat.' },
+        { t: 'Formát pro platformu', d: 'Obsah nativní pro Instagram, ne kopie z jiné sítě. Přesně to, co Gen Z čeká ve feedu.' },
+      ],
+
+      reviews: [
+        { quote: 'Poprvé jsme u obsahu věděli, proč funguje. Ne pocit, ale číslo a plán — a čísla šla nahoru hned první měsíc.', name: 'Marketingová ředitelka', role: 'Fashion e-shop' },
+        { quote: 'Nejdřív mě štvalo, že bez strategie nic neudělají. Pak jsem pochopil, že přesně tohle nám celou dobu chybělo.', name: 'Zakladatel', role: 'Beauty značka' },
+        { quote: 'Reels od Velocity poznám ve feedu na první pohled. A hlavně je lidi dokoukají — což se o naší dřívější agentuře říct nedalo.', name: 'Brand manažer', role: 'Sportovní výživa' },
+      ],
+
+      team: [
+        { name: 'Albert', alias: 'Levis', role: 'Kreativní a marketingová strategie, šéf produkce, kameraman, grafik.', bg: 'url(assets/team/portrait-1.jpg)' },
+        { name: 'Matyáš', alias: 'Maty · Brunyys', role: 'Sales, akvizice a Key Account Manager. Komunikace s klienty.', bg: 'url(assets/team/portrait-2.jpg)' },
+        { name: 'Daniel', alias: 'Dan · Vlčis', role: 'Finance a projektový management.', bg: 'url(assets/team/portrait-3.jpg)' },
+        { name: 'Tomáš', alias: 'Tom', role: 'IT, stavba systémů, web a automatizace.', bg: 'url(assets/team/portrait-4.jpg)' },
+      ],
+      principles: [
+        { t: 'Měřitelnost', d: 'Autenticitu neuvidíte v tabulce. Ale změřit se dá — a my ji měříme.' },
+        { t: 'Strategie napřed', d: 'Žádný náhodný obsah. Nejdřív víme proč, teprve pak tvoříme.' },
+        { t: 'Ostrost', d: 'Premium provedení, Gen Z energie. Žádný korporátní jazyk, žádná vata.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

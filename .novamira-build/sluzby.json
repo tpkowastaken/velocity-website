@@ -1,0 +1,1455 @@
+[
+  {
+    "id": "w9mgcc",
+    "name": "section",
+    "parent": 0,
+    "children": [
+      "azx1js"
+    ],
+    "settings": {
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "84px",
+        "right": "0px",
+        "bottom": "84px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "azx1js",
+    "name": "container",
+    "parent": "w9mgcc",
+    "children": [
+      "ifj5g2",
+      "x63mom",
+      "jhmplo"
+    ],
+    "settings": {
+      "_maxWidth": "var(--wrap)",
+      "_width": "100%",
+      "_margin": {
+        "top": "0px",
+        "right": "auto",
+        "bottom": "0px",
+        "left": "auto"
+      },
+      "_padding": {
+        "top": "0px",
+        "right": "var(--space-xl)",
+        "bottom": "0px",
+        "left": "var(--space-xl)"
+      }
+    }
+  },
+  {
+    "id": "ifj5g2",
+    "name": "text-basic",
+    "parent": "azx1js",
+    "children": [],
+    "settings": {
+      "text": "Služby",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-body)",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "10px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "x63mom",
+    "name": "heading",
+    "parent": "azx1js",
+    "children": [],
+    "settings": {
+      "tag": "h1",
+      "text": "TŘI KROKY. ŽÁDNÝ OBSAH BEZ STRATEGIE.",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "76px",
+        "lineHeight": "0.9",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { font-size: 50px !important; } }"
+    }
+  },
+  {
+    "id": "jhmplo",
+    "name": "text-basic",
+    "parent": "azx1js",
+    "children": [],
+    "settings": {
+      "text": "Postupujeme vždy ve stejném pořadí. Nejdřív měříme, pak stavíme strategii, teprve potom tvoříme. Přeskočit kroky nejde — a to je záměr.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontFamily": "var(--font-body)",
+        "fontSize": "17px",
+        "lineHeight": "1.6"
+      }
+    }
+  },
+  {
+    "id": "a0cq2q",
+    "name": "section",
+    "parent": 0,
+    "children": [
+      "0eh51q"
+    ],
+    "settings": {
+      "_background": {
+        "color": {
+          "raw": "var(--white)"
+        }
+      },
+      "_padding": {
+        "top": "72px",
+        "right": "0px",
+        "bottom": "72px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "0eh51q",
+    "name": "container",
+    "parent": "a0cq2q",
+    "children": [
+      "uoeg2t",
+      "uqsqm8",
+      "afeold"
+    ],
+    "settings": {
+      "_maxWidth": "var(--wrap)",
+      "_width": "100%",
+      "_margin": {
+        "top": "0px",
+        "right": "auto",
+        "bottom": "0px",
+        "left": "auto"
+      },
+      "_padding": {
+        "top": "0px",
+        "right": "var(--space-xl)",
+        "bottom": "0px",
+        "left": "var(--space-xl)"
+      }
+    }
+  },
+  {
+    "id": "uoeg2t",
+    "name": "block",
+    "parent": "0eh51q",
+    "children": [
+      "mkerdl",
+      "6jjovv"
+    ],
+    "settings": {
+      "link": {
+        "type": "external",
+        "url": "https://dev.velocity.ooo/gen-z-audit/",
+        "newTab": false
+      },
+      "_border": {
+        "width": {
+          "top": "1px",
+          "right": "1px",
+          "bottom": "1px",
+          "left": "1px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--border-subtle)"
+        }
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-md)"
+      },
+      "_background": {
+        "color": {
+          "raw": "var(--white)"
+        }
+      },
+      "_padding": {
+        "top": "40px",
+        "right": "40px",
+        "bottom": "40px",
+        "left": "40px"
+      },
+      "_display": "grid",
+      "_gridTemplateColumns": "120px 1fr",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "28px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { grid-template-columns: 1fr !important; gap: 12px !important; padding: 28px !important; } }",
+      "_columnGap": "32px",
+      "_rowGap": "32px"
+    }
+  },
+  {
+    "id": "mkerdl",
+    "name": "heading",
+    "parent": "uoeg2t",
+    "children": [],
+    "settings": {
+      "tag": "div",
+      "text": "01",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage-deep)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "84px",
+        "lineHeight": "0.8"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { font-size: 52px !important; } }"
+    }
+  },
+  {
+    "id": "6jjovv",
+    "name": "div",
+    "parent": "uoeg2t",
+    "children": [
+      "y38ejz",
+      "s9deoe",
+      "r5f779",
+      "cs2yu0"
+    ],
+    "settings": {}
+  },
+  {
+    "id": "y38ejz",
+    "name": "heading",
+    "parent": "6jjovv",
+    "children": [],
+    "settings": {
+      "tag": "h2",
+      "text": "Gen Z Audit",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "40px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "s9deoe",
+    "name": "text-basic",
+    "parent": "6jjovv",
+    "children": [],
+    "settings": {
+      "text": "Kde jste teď",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "18px",
+        "left": "0px"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted)"
+        },
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "letterSpacing": "0.06em",
+        "textTransform": "uppercase"
+      }
+    }
+  },
+  {
+    "id": "r5f779",
+    "name": "text-basic",
+    "parent": "6jjovv",
+    "children": [],
+    "settings": {
+      "text": "Změříme potenciál vašeho obsahu u generace Z. Váhované metriky z 50+ výzkumných zdrojů dají jedno číslo — Gen Z skóre — a seznam oblastí, na které se vyplatí zaměřit jako první.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-body)",
+        "fontSize": "16px",
+        "lineHeight": "1.6"
+      }
+    }
+  },
+  {
+    "id": "cs2yu0",
+    "name": "div",
+    "parent": "6jjovv",
+    "children": [
+      "yt9776",
+      "fb92w6",
+      "vom0k1"
+    ],
+    "settings": {
+      "_display": "flex",
+      "_direction": "row",
+      "_flexWrap": "wrap",
+      "_margin": {
+        "top": "20px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_columnGap": "10px",
+      "_rowGap": "10px"
+    }
+  },
+  {
+    "id": "yt9776",
+    "name": "text-basic",
+    "parent": "cs2yu0",
+    "children": [],
+    "settings": {
+      "text": "Gen Z skóre",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "fb92w6",
+    "name": "text-basic",
+    "parent": "cs2yu0",
+    "children": [],
+    "settings": {
+      "text": "Akční plán priorit",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "vom0k1",
+    "name": "text-basic",
+    "parent": "cs2yu0",
+    "children": [],
+    "settings": {
+      "text": "Bez přístupu do analytik",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "uqsqm8",
+    "name": "block",
+    "parent": "0eh51q",
+    "children": [
+      "c7jn7w",
+      "efwr5r"
+    ],
+    "settings": {
+      "link": {
+        "type": "external",
+        "url": "https://dev.velocity.ooo/obsahova-strategie/",
+        "newTab": false
+      },
+      "_border": {
+        "width": {
+          "top": "1px",
+          "right": "1px",
+          "bottom": "1px",
+          "left": "1px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--border-subtle)"
+        }
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-md)"
+      },
+      "_background": {
+        "color": {
+          "raw": "var(--white)"
+        }
+      },
+      "_padding": {
+        "top": "40px",
+        "right": "40px",
+        "bottom": "40px",
+        "left": "40px"
+      },
+      "_display": "grid",
+      "_gridTemplateColumns": "120px 1fr",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "28px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { grid-template-columns: 1fr !important; gap: 12px !important; padding: 28px !important; } }",
+      "_columnGap": "32px",
+      "_rowGap": "32px"
+    }
+  },
+  {
+    "id": "c7jn7w",
+    "name": "heading",
+    "parent": "uqsqm8",
+    "children": [],
+    "settings": {
+      "tag": "div",
+      "text": "02",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage-deep)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "84px",
+        "lineHeight": "0.8"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { font-size: 52px !important; } }"
+    }
+  },
+  {
+    "id": "efwr5r",
+    "name": "div",
+    "parent": "uqsqm8",
+    "children": [
+      "vsdp87",
+      "ovm106",
+      "4e8afm",
+      "3dn9k1"
+    ],
+    "settings": {}
+  },
+  {
+    "id": "vsdp87",
+    "name": "heading",
+    "parent": "efwr5r",
+    "children": [],
+    "settings": {
+      "tag": "h2",
+      "text": "Obsahová strategie",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "40px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "ovm106",
+    "name": "text-basic",
+    "parent": "efwr5r",
+    "children": [],
+    "settings": {
+      "text": "Kam jdeme",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "18px",
+        "left": "0px"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted)"
+        },
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "letterSpacing": "0.06em",
+        "textTransform": "uppercase"
+      }
+    }
+  },
+  {
+    "id": "4e8afm",
+    "name": "text-basic",
+    "parent": "efwr5r",
+    "children": [],
+    "settings": {
+      "text": "Deep research na vaše odvětví, značku a konkurenci. Z toho postavíme témata, formáty a funnel pro TikTok, Instagram i Meta Ads.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-body)",
+        "fontSize": "16px",
+        "lineHeight": "1.6"
+      }
+    }
+  },
+  {
+    "id": "3dn9k1",
+    "name": "div",
+    "parent": "efwr5r",
+    "children": [
+      "kzogct",
+      "7t7mxo",
+      "0kbzgq"
+    ],
+    "settings": {
+      "_display": "flex",
+      "_direction": "row",
+      "_flexWrap": "wrap",
+      "_margin": {
+        "top": "20px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_columnGap": "10px",
+      "_rowGap": "10px"
+    }
+  },
+  {
+    "id": "kzogct",
+    "name": "text-basic",
+    "parent": "3dn9k1",
+    "children": [],
+    "settings": {
+      "text": "Research odvětví",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "7t7mxo",
+    "name": "text-basic",
+    "parent": "3dn9k1",
+    "children": [],
+    "settings": {
+      "text": "Témata & formáty",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "0kbzgq",
+    "name": "text-basic",
+    "parent": "3dn9k1",
+    "children": [],
+    "settings": {
+      "text": "Content plán",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "afeold",
+    "name": "block",
+    "parent": "0eh51q",
+    "children": [
+      "67u8dl",
+      "nyd3nm"
+    ],
+    "settings": {
+      "link": {
+        "type": "external",
+        "url": "https://dev.velocity.ooo/core-offer/",
+        "newTab": false
+      },
+      "_border": {
+        "width": {
+          "top": "1px",
+          "right": "1px",
+          "bottom": "1px",
+          "left": "1px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--border-subtle)"
+        }
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-md)"
+      },
+      "_background": {
+        "color": {
+          "raw": "var(--white)"
+        }
+      },
+      "_padding": {
+        "top": "40px",
+        "right": "40px",
+        "bottom": "40px",
+        "left": "40px"
+      },
+      "_display": "grid",
+      "_gridTemplateColumns": "120px 1fr",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "28px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { grid-template-columns: 1fr !important; gap: 12px !important; padding: 28px !important; } }",
+      "_columnGap": "32px",
+      "_rowGap": "32px"
+    }
+  },
+  {
+    "id": "67u8dl",
+    "name": "heading",
+    "parent": "afeold",
+    "children": [],
+    "settings": {
+      "tag": "div",
+      "text": "03",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage-deep)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "84px",
+        "lineHeight": "0.8"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { font-size: 52px !important; } }"
+    }
+  },
+  {
+    "id": "nyd3nm",
+    "name": "div",
+    "parent": "afeold",
+    "children": [
+      "j0watr",
+      "nsy9h4",
+      "l1h4j4",
+      "5lqwe4"
+    ],
+    "settings": {}
+  },
+  {
+    "id": "j0watr",
+    "name": "heading",
+    "parent": "nyd3nm",
+    "children": [],
+    "settings": {
+      "tag": "h2",
+      "text": "Core Offer",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "40px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "nsy9h4",
+    "name": "text-basic",
+    "parent": "nyd3nm",
+    "children": [],
+    "settings": {
+      "text": "Jak to děláme",
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "18px",
+        "left": "0px"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted)"
+        },
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "letterSpacing": "0.06em",
+        "textTransform": "uppercase"
+      }
+    }
+  },
+  {
+    "id": "l1h4j4",
+    "name": "text-basic",
+    "parent": "nyd3nm",
+    "children": [],
+    "settings": {
+      "text": "Zhruba 20 kusů obsahu měsíčně: short-form videa, statiky, grafiky, carousely a AI images.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-body)"
+        },
+        "fontFamily": "var(--font-body)",
+        "fontSize": "16px",
+        "lineHeight": "1.6"
+      }
+    }
+  },
+  {
+    "id": "5lqwe4",
+    "name": "div",
+    "parent": "nyd3nm",
+    "children": [
+      "7sciyv",
+      "eo4mck",
+      "ggeku2"
+    ],
+    "settings": {
+      "_display": "flex",
+      "_direction": "row",
+      "_flexWrap": "wrap",
+      "_margin": {
+        "top": "20px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_columnGap": "10px",
+      "_rowGap": "10px"
+    }
+  },
+  {
+    "id": "7sciyv",
+    "name": "text-basic",
+    "parent": "5lqwe4",
+    "children": [],
+    "settings": {
+      "text": "~20 kusů / měsíc",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "eo4mck",
+    "name": "text-basic",
+    "parent": "5lqwe4",
+    "children": [],
+    "settings": {
+      "text": "High + low production",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "ggeku2",
+    "name": "text-basic",
+    "parent": "5lqwe4",
+    "children": [],
+    "settings": {
+      "text": "Měsíční reporty",
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "7px",
+        "right": "13px",
+        "bottom": "7px",
+        "left": "13px"
+      },
+      "_borderRadius": {
+        "raw": "var(--radius-pill)"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontSize": "13px"
+      }
+    }
+  },
+  {
+    "id": "7olqys",
+    "name": "section",
+    "parent": 0,
+    "children": [
+      "4y7g70"
+    ],
+    "settings": {
+      "_background": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "_padding": {
+        "top": "72px",
+        "right": "0px",
+        "bottom": "72px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "4y7g70",
+    "name": "container",
+    "parent": "7olqys",
+    "children": [
+      "fjcgjd",
+      "b5vzdb"
+    ],
+    "settings": {
+      "_maxWidth": "var(--wrap)",
+      "_width": "100%",
+      "_margin": {
+        "top": "0px",
+        "right": "auto",
+        "bottom": "0px",
+        "left": "auto"
+      },
+      "_padding": {
+        "top": "0px",
+        "right": "var(--space-xl)",
+        "bottom": "0px",
+        "left": "var(--space-xl)"
+      }
+    }
+  },
+  {
+    "id": "fjcgjd",
+    "name": "heading",
+    "parent": "4y7g70",
+    "children": [],
+    "settings": {
+      "tag": "h2",
+      "text": "JAK PROBÍHÁ SPOLUPRÁCE",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "56px",
+        "lineHeight": "0.9",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { font-size: 34px !important; } }"
+    }
+  },
+  {
+    "id": "b5vzdb",
+    "name": "div",
+    "parent": "4y7g70",
+    "children": [
+      "1irdra",
+      "roplo9",
+      "e9zuwg",
+      "vn79hj",
+      "26gspe"
+    ],
+    "settings": {
+      "_display": "grid",
+      "_gridTemplateColumns": "repeat(5, 1fr)",
+      "_margin": {
+        "top": "40px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      },
+      "_cssCustom": "@media (max-width: 900px) { %root% { grid-template-columns: 1fr !important; gap: 20px !important; } }",
+      "_columnGap": "20px",
+      "_rowGap": "20px"
+    }
+  },
+  {
+    "id": "1irdra",
+    "name": "div",
+    "parent": "b5vzdb",
+    "children": [
+      "3eh9rj",
+      "usjohr",
+      "pvzo20"
+    ],
+    "settings": {
+      "_border": {
+        "width": {
+          "top": "2px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "_padding": {
+        "top": "16px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "3eh9rj",
+    "name": "text-basic",
+    "parent": "1irdra",
+    "children": [],
+    "settings": {
+      "text": "01",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "22px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "usjohr",
+    "name": "heading",
+    "parent": "1irdra",
+    "children": [],
+    "settings": {
+      "tag": "h3",
+      "text": "Dotazník",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "21px",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "8px",
+        "right": "0px",
+        "bottom": "8px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "pvzo20",
+    "name": "text-basic",
+    "parent": "1irdra",
+    "children": [],
+    "settings": {
+      "text": "Sesbíráme kontext o značce, cílech a datech.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontSize": "13px",
+        "lineHeight": "1.5"
+      }
+    }
+  },
+  {
+    "id": "roplo9",
+    "name": "div",
+    "parent": "b5vzdb",
+    "children": [
+      "k6jeue",
+      "b500e1",
+      "houiep"
+    ],
+    "settings": {
+      "_border": {
+        "width": {
+          "top": "2px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "_padding": {
+        "top": "16px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "k6jeue",
+    "name": "text-basic",
+    "parent": "roplo9",
+    "children": [],
+    "settings": {
+      "text": "02",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "22px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "b500e1",
+    "name": "heading",
+    "parent": "roplo9",
+    "children": [],
+    "settings": {
+      "tag": "h3",
+      "text": "Research",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "21px",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "8px",
+        "right": "0px",
+        "bottom": "8px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "houiep",
+    "name": "text-basic",
+    "parent": "roplo9",
+    "children": [],
+    "settings": {
+      "text": "Odvětví, klient, konkurence — do hloubky.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontSize": "13px",
+        "lineHeight": "1.5"
+      }
+    }
+  },
+  {
+    "id": "e9zuwg",
+    "name": "div",
+    "parent": "b5vzdb",
+    "children": [
+      "qrhch3",
+      "ztf6gk",
+      "3k4rfs"
+    ],
+    "settings": {
+      "_border": {
+        "width": {
+          "top": "2px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "_padding": {
+        "top": "16px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "qrhch3",
+    "name": "text-basic",
+    "parent": "e9zuwg",
+    "children": [],
+    "settings": {
+      "text": "03",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "22px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "ztf6gk",
+    "name": "heading",
+    "parent": "e9zuwg",
+    "children": [],
+    "settings": {
+      "tag": "h3",
+      "text": "Strategie",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "21px",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "8px",
+        "right": "0px",
+        "bottom": "8px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "3k4rfs",
+    "name": "text-basic",
+    "parent": "e9zuwg",
+    "children": [],
+    "settings": {
+      "text": "Témata, formáty a funnel. Content plán a kalendář.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontSize": "13px",
+        "lineHeight": "1.5"
+      }
+    }
+  },
+  {
+    "id": "vn79hj",
+    "name": "div",
+    "parent": "b5vzdb",
+    "children": [
+      "qv7gic",
+      "t8ugfw",
+      "2dgdba"
+    ],
+    "settings": {
+      "_border": {
+        "width": {
+          "top": "2px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "_padding": {
+        "top": "16px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "qv7gic",
+    "name": "text-basic",
+    "parent": "vn79hj",
+    "children": [],
+    "settings": {
+      "text": "04",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "22px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "t8ugfw",
+    "name": "heading",
+    "parent": "vn79hj",
+    "children": [],
+    "settings": {
+      "tag": "h3",
+      "text": "Produkce",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "21px",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "8px",
+        "right": "0px",
+        "bottom": "8px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "2dgdba",
+    "name": "text-basic",
+    "parent": "vn79hj",
+    "children": [],
+    "settings": {
+      "text": "Brief → scénáře → natáčecí den → editing → kontrola.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontSize": "13px",
+        "lineHeight": "1.5"
+      }
+    }
+  },
+  {
+    "id": "26gspe",
+    "name": "div",
+    "parent": "b5vzdb",
+    "children": [
+      "jxohhh",
+      "9oq34j",
+      "ghecmn"
+    ],
+    "settings": {
+      "_border": {
+        "width": {
+          "top": "2px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "_padding": {
+        "top": "16px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "jxohhh",
+    "name": "text-basic",
+    "parent": "26gspe",
+    "children": [],
+    "settings": {
+      "text": "05",
+      "_typography": {
+        "color": {
+          "raw": "var(--voltage)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "22px",
+        "letterSpacing": "0.02em"
+      }
+    }
+  },
+  {
+    "id": "9oq34j",
+    "name": "heading",
+    "parent": "26gspe",
+    "children": [],
+    "settings": {
+      "tag": "h3",
+      "text": "Report",
+      "_typography": {
+        "color": {
+          "raw": "var(--signal)"
+        },
+        "fontFamily": "var(--font-display)",
+        "fontSize": "21px",
+        "letterSpacing": "0.02em"
+      },
+      "_margin": {
+        "top": "8px",
+        "right": "0px",
+        "bottom": "8px",
+        "left": "0px"
+      }
+    }
+  },
+  {
+    "id": "ghecmn",
+    "name": "text-basic",
+    "parent": "26gspe",
+    "children": [],
+    "settings": {
+      "text": "Čísla, progress a další krok. Každý měsíc.",
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontSize": "13px",
+        "lineHeight": "1.5"
+      }
+    }
+  }
+]

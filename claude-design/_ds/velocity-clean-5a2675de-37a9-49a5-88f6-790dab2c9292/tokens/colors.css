@@ -1,0 +1,60 @@
+/* ============================================================
+   VELOCITY — COLOR TOKENS
+   Brand palette per Velocity Brand Guide (2026):
+   BEDROCK · SIGNAL · VOLTAGE · CHROME
+   ============================================================ */
+:root {
+  /* ---- Brand primitives ---- */
+  --bedrock: #0b0b0b;        /* main background, bold text, logos  */
+  --signal: #f1f0ef;         /* high-contrast rest / air surfaces  */
+  --voltage: #cbff1e;        /* accent — small text, icons, links  */
+
+  /* Bedrock ramp (dark surfaces) */
+  --bedrock-900: #050505;
+  --bedrock-800: #141414;
+  --bedrock-700: #1e1e1e;
+  --bedrock-600: #2a2a2a;
+
+  /* Voltage variants (never on large light areas) */
+  --voltage-deep: #a8d400;   /* pressed / gradient stop on light   */
+  --voltage-soft: #e8ffab;   /* faint voltage wash                 */
+
+  /* Neutrals */
+  --white: #ffffff;
+  --gray-100: #fafaf9;
+  --gray-200: #e9e9e7;
+  --gray-300: #d8d7d4;
+  --gray-400: #b4b3af;
+  --gray-500: #8a8985;
+  --gray-600: #6b6a66;
+  --gray-700: #46453f;
+
+  /* CHROME — metallic premium effect. Logo / hero only.
+     Never paired with VOLTAGE. */
+  --chrome-gradient: linear-gradient(135deg, #f4f4f5 0%, #c7c8cc 22%, #9a9ba0 42%, #e8e9eb 55%, #86878c 74%, #d3d4d8 100%); /* @kind color */
+
+  /* ---- Semantic aliases ---- */
+  --surface-page: var(--white);
+  --surface-rest: var(--signal);
+  --surface-card: var(--signal);
+  --surface-dark: var(--bedrock);
+  --surface-dark-elevated: var(--bedrock-800);
+
+  --text-strong: var(--bedrock);
+  --text-body: #232322;
+  --text-muted: var(--gray-600);
+  --text-inverse: var(--signal);
+  --text-muted-inverse: #9a9995;
+  --text-accent: var(--voltage);
+
+  --border-subtle: var(--gray-300);
+  --border-strong: var(--bedrock);
+  --border-inverse: rgba(241,240,239,0.18);
+
+  --focus-ring: var(--voltage);
+
+  /* Status (from Typografie notification specimens) */
+  --success-bg: #eef7e0; --success-fg: #3f6b1a; --success-border: #cfe8ab;
+  --error-bg: #fbe9e9;   --error-fg: #a33333;   --error-border: #f0c4c4;
+  --warn-bg: #fdf3d8;    --warn-fg: #8a6416;    --warn-border: #f1e0a3;
+}

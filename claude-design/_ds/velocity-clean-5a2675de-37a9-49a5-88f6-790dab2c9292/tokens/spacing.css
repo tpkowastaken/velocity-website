@@ -1,0 +1,16 @@
+/* ============================================================
+   VELOCITY — SPACING TOKENS
+   4 / 8 px scale. Nothing off-scale appears in a Velocity design.
+   ============================================================ */
+:root {
+  --space-1: 4px;    /* icon ↔ label, micro gaps            */
+  --space-2: 8px;    /* padding of small elements (badge)   */
+  --space-3: 12px;   /* button gap, tag gap, form rows      */
+  --space-4: 16px;   /* grid gap, input padding             */
+  --space-5: 24px;   /* heading→content, card gap           */
+  --space-6: 32px;   /* blocks within a section             */
+  --space-7: 48px;   /* section horizontal padding          */
+  --space-8: 64px;   /* section vertical padding            */
+  --space-9: 96px;   /* large landing-page block separation */
+  --space-10: 128px; /* hero padding (exceptional)          */
+}

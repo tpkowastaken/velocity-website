@@ -1,0 +1,24 @@
+/* ============================================================
+   VELOCITY — RADIUS, BORDER & SHADOW TOKENS
+   Velocity is sharp-edged: buttons/badges square by default.
+   Radii are reserved for cards, inputs and pills.
+   ============================================================ */
+:root {
+  --radius-none: 0px;    /* buttons, banners, hard edges  */
+  --radius-sm: 4px;      /* inputs, badges, small cards   */
+  --radius-md: 8px;      /* cards, banners                */
+  --radius-pill: 999px;  /* tags, switches                */
+
+  --border-width: 1.5px; /* @kind other */
+  --border-hairline: 1px; /* @kind other */
+
+  /* Elevation — soft, low, cool. Never colored. */
+  --shadow-card: 0 12px 24px -12px rgba(0,0,0,0.15);
+  --shadow-pop: 0 8px 20px -6px rgba(0,0,0,0.22);
+  --shadow-none: none;
+
+  /* Motion — quick, no bounce */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1); /* @kind other */
+  --dur-fast: 100ms;  /* @kind other */
+  --dur-base: 120ms;  /* @kind other */
+}
