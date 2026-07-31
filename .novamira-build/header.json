@@ -52,7 +52,8 @@
         "right": "var(--space-xl)",
         "bottom": "14px",
         "left": "var(--space-xl)"
-      }
+      },
+      "_cssCustom": "@media (max-width: 900px) { #brxe-sgm63g { padding-left: 22px !important; padding-right: 22px !important; } }"
     }
   },
   {
@@ -68,9 +69,11 @@
       "_display": "flex",
       "_direction": "row",
       "_alignItems": "center",
-      "_flexWrap": "wrap",
-      "_columnGap": "28px",
-      "_rowGap": "28px"
+      "_flexWrap": "nowrap",
+      "_columnGap": "var(--space-lg)",
+      "_rowGap": "var(--space-lg)",
+      "_justifyContent": "flex-start",
+      "_width": "100%"
     },
     "label": "Header row"
   },
@@ -87,12 +90,13 @@
       "_direction": "row",
       "_alignItems": "center",
       "link": {
-        "type": "external",
-        "url": "/",
-        "newTab": false
+        "type": "internal",
+        "postId": "33"
       },
       "_columnGap": "11px",
-      "_rowGap": "11px"
+      "_rowGap": "11px",
+      "tag": "a",
+      "_flexShrink": "0"
     },
     "label": "Logo"
   },
@@ -103,15 +107,17 @@
     "children": [],
     "settings": {
       "image": {
-        "id": 26,
-        "url": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-voltage.svg",
-        "filename": "velocity-voltage.svg",
+        "id": 66,
+        "url": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-mark-voltage.svg",
+        "filename": "velocity-mark-voltage.svg",
         "size": "full",
-        "full": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-voltage.svg",
+        "full": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-mark-voltage.svg",
         "alt": "Velocity"
       },
-      "_height": "30px",
-      "_width": "auto"
+      "_height": "32px",
+      "_width": "auto",
+      "altText": "Velocity",
+      "loading": "eager"
     }
   },
   {
@@ -128,121 +134,98 @@
         "fontFamily": "var(--font-display)",
         "fontSize": "26px",
         "letterSpacing": "0.06em"
-      }
+      },
+      "_cssGlobalClasses": [
+        "bz35pg"
+      ]
     }
   },
   {
     "id": "aiyn19",
-    "name": "div",
+    "name": "nav-menu",
     "parent": "9amfin",
-    "children": [
-      "c8yux4",
-      "zko5nq",
-      "xlzuir",
-      "knyhub"
-    ],
+    "children": [],
     "settings": {
-      "_display": "flex",
-      "_direction": "row",
-      "_alignItems": "center",
+      "menu": "10",
+      "menuGap": "26px",
+      "menuTypography": {
+        "font-family": "var(--font-body)",
+        "font-size": "14px",
+        "font-weight": "500",
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        }
+      },
+      "menuActiveTypography": {
+        "color": {
+          "raw": "var(--voltage)"
+        }
+      },
+      "mobileMenu": "custom",
+      "mobileMenuCustomBreakpoint": "900",
+      "mobileMenuToggleColor": {
+        "raw": "var(--signal)"
+      },
+      "mobileMenuBackground": {
+        "color": {
+          "raw": "var(--bedrock)"
+        }
+      },
+      "mobileMenuTypography": {
+        "font-family": "var(--font-display)",
+        "font-size": "30px",
+        "color": {
+          "raw": "var(--signal)"
+        }
+      },
+      "subMenuBackgroundList": {
+        "color": {
+          "raw": "var(--bedrock-800)"
+        }
+      },
+      "subMenuTypography": {
+        "font-family": "var(--font-display)",
+        "font-size": "20px",
+        "color": {
+          "raw": "var(--signal)"
+        }
+      },
+      "subMenuPadding": {
+        "top": "13px",
+        "right": "14px",
+        "bottom": "13px",
+        "left": "14px"
+      },
+      "subMenuBorder": {
+        "width": {
+          "top": "1px",
+          "right": "1px",
+          "bottom": "1px",
+          "left": "1px"
+        },
+        "style": "solid",
+        "color": {
+          "raw": "var(--border-inverse)"
+        },
+        "radius": {
+          "top": "8px",
+          "right": "8px",
+          "bottom": "8px",
+          "left": "8px"
+        }
+      },
+      "_flexGrow": "1",
       "_margin": {
         "top": "0px",
         "right": "0px",
         "bottom": "0px",
-        "left": "32px"
+        "left": "var(--space-lg)"
       },
-      "_columnGap": "26px",
-      "_rowGap": "26px"
+      "_alignItems": "center",
+      "_display": "flex",
+      "_widthMin": "0"
     },
     "label": "Nav"
-  },
-  {
-    "id": "c8yux4",
-    "name": "text-basic",
-    "parent": "aiyn19",
-    "children": [],
-    "settings": {
-      "text": "Home",
-      "link": {
-        "type": "external",
-        "url": "/",
-        "newTab": false
-      },
-      "_typography": {
-        "color": {
-          "raw": "var(--text-muted-inverse)"
-        },
-        "fontFamily": "var(--font-body)",
-        "fontSize": "14px",
-        "fontWeight": "500"
-      }
-    }
-  },
-  {
-    "id": "zko5nq",
-    "name": "text-basic",
-    "parent": "aiyn19",
-    "children": [],
-    "settings": {
-      "text": "Služby",
-      "link": {
-        "type": "external",
-        "url": "https://dev.velocity.ooo/sluzby/",
-        "newTab": false
-      },
-      "_typography": {
-        "color": {
-          "raw": "var(--text-muted-inverse)"
-        },
-        "fontFamily": "var(--font-body)",
-        "fontSize": "14px",
-        "fontWeight": "500"
-      }
-    }
-  },
-  {
-    "id": "xlzuir",
-    "name": "text-basic",
-    "parent": "aiyn19",
-    "children": [],
-    "settings": {
-      "text": "Reference",
-      "link": {
-        "type": "external",
-        "url": "https://dev.velocity.ooo/reference/",
-        "newTab": false
-      },
-      "_typography": {
-        "color": {
-          "raw": "var(--text-muted-inverse)"
-        },
-        "fontFamily": "var(--font-body)",
-        "fontSize": "14px",
-        "fontWeight": "500"
-      }
-    }
-  },
-  {
-    "id": "knyhub",
-    "name": "text-basic",
-    "parent": "aiyn19",
-    "children": [],
-    "settings": {
-      "text": "O nás",
-      "link": {
-        "type": "external",
-        "url": "https://dev.velocity.ooo/o-nas/",
-        "newTab": false
-      },
-      "_typography": {
-        "color": {
-          "raw": "var(--text-muted-inverse)"
-        },
-        "fontFamily": "var(--font-body)",
-        "fontSize": "14px",
-        "fontWeight": "500"
-      }
-    }
   },
   {
     "id": "jn6hd2",
@@ -262,8 +245,13 @@
         "bottom": "0px",
         "left": "auto"
       },
-      "_columnGap": "10px",
-      "_rowGap": "10px"
+      "_columnGap": "var(--space-md)",
+      "_rowGap": "var(--space-md)",
+      "_flexShrink": "0",
+      "_cssGlobalClasses": [
+        "bz35pg"
+      ],
+      "_cssCustom": "@media (max-width: 900px) { #brxe-jn6hd2 { display: none !important; } }"
     },
     "label": "Header CTAs"
   },
@@ -276,8 +264,7 @@
       "text": "604 620 011",
       "link": {
         "type": "external",
-        "url": "tel:+420604620011",
-        "newTab": false
+        "url": "tel:+420604620011"
       },
       "_background": {
         "color": {
@@ -323,8 +310,7 @@
       "text": "Zjistěte, jestli jsme pro vás",
       "link": {
         "type": "external",
-        "url": "https://dev.velocity.ooo/kontakt/",
-        "newTab": false
+        "url": "https://dev.velocity.ooo/kontakt/"
       },
       "style": "primary",
       "_background": {
