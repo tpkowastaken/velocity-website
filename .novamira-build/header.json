@@ -72,7 +72,8 @@
       "_flexWrap": "nowrap",
       "_columnGap": "var(--space-lg)",
       "_rowGap": "var(--space-lg)",
-      "_justifyContent": "flex-start"
+      "_justifyContent": "flex-start",
+      "_width": "100%"
     },
     "label": "Header row"
   },
@@ -221,7 +222,8 @@
         "left": "var(--space-lg)"
       },
       "_alignItems": "center",
-      "_display": "flex"
+      "_display": "flex",
+      "_widthMin": "0"
     },
     "label": "Nav"
   },
