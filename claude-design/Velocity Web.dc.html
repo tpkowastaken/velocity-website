@@ -55,6 +55,7 @@
     .vx-svc-num { font-size: 52px !important; }
     .vx-reels { padding-left: 22px !important; padding-right: 22px !important; }
     .vx-desktopnav { display: none; }
+    .vx-brand-text { display: none; }
     .vx-mobilebtn { display: inline-flex; }
     .vx-heropad { padding-top: 56px !important; padding-bottom: 56px !important; }
     .vx-secpad { padding-top: 56px !important; padding-bottom: 56px !important; }
@@ -68,10 +69,9 @@
     <div class="vx-wrap" style="display: flex; align-items: center; gap: 28px; padding-top: 14px; padding-bottom: 14px;">
       <a href="#/home" onClick="{{ nav }}" style="display: flex; align-items: center; gap: 11px;">
         <img src="assets/logo/velocity-voltage.svg" alt="Velocity" style="height: 30px; width: auto; display: block;">
-        <span style="font-family: var(--font-display); font-size: 26px; letter-spacing: 0.06em; color: var(--signal);">VELOCITY</span>
+        <span class="vx-brand-text" style="font-family: var(--font-display); font-size: 26px; letter-spacing: 0.06em; color: var(--signal);">VELOCITY</span>
       </a>
       <nav class="vx-desktopnav" style="gap: 26px; margin-left: 32px; align-items: center;">
-        <a class="vx-navlink" href="#/home" data-active="{{ navHome }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">Home</a>
         <div class="vx-drop">
           <a class="vx-navlink" href="#/sluzby" data-active="{{ navSluzby }}" onClick="{{ nav }}" style="font-size: 14px; font-weight: 500;">Služby<span class="vx-caret">▾</span></a>
           <div class="vx-drop-panel">
@@ -98,7 +98,6 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="border-top: 1px solid var(--border-inverse); padding: 16px 22px 22px; display: flex; flex-direction: column; gap: 4px;">
-        <a class="vx-navlink" href="#/home" data-active="{{ navHome }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">Home</a>
         <a class="vx-navlink" href="#/sluzby" data-active="{{ navSluzby }}" onClick="{{ nav }}" style="font-family: var(--font-display); font-size: 30px; letter-spacing: 0.03em; padding: 8px 0;">Služby</a>
         <sc-for list="{{ serviceLinks }}" as="s" hint-placeholder-count="3">
           <a class="vx-navlink" href="{{ s.href }}" onClick="{{ nav }}" style="font-size: 15px; padding: 6px 0 6px 16px; border-left: 1.5px solid var(--border-inverse); margin-left: 4px;">{{ s.label }}</a>
