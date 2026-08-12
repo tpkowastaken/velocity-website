@@ -50,7 +50,12 @@
       "file": "kontakt.json",
       "description": "Lead CTA page with phone; questionnaire placeholder",
       "element_count": 9
+    },
+    {
+      "file": "typografie.json",
+      "description": "Typography specimen: Bebas Neue display scale, Poppins body scale, pairing and rules",
+      "element_count": 78
     }
   ],
-  "total_elements": 480
+  "total_elements": 560
 }

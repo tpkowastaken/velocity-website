@@ -7,7 +7,8 @@
     "core-offer": 37,
     "reference": 38,
     "o-nas": 39,
-    "kontakt": 40
+    "kontakt": 40,
+    "typografie": 65
   },
   "media": {
     "velocity-voltage.svg": 26,
@@ -26,6 +27,7 @@
     "core-offer": "core.json",
     "reference": "reference.json",
     "o-nas": "onas.json",
-    "kontakt": "kontakt.json"
+    "kontakt": "kontakt.json",
+    "typografie": "typografie.json"
   }
 }
