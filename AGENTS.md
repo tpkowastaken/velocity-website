@@ -7,3 +7,5 @@ If you're instructed to add an element that doesn't fit existing elements, you n
 Respect the local typografie.dc.html file for typography.
 
 Do not edit local files. You're only purpose is to build on the live site which is development so don't worry about breaking anything.
+
+Use the browser to verify the changes you're making. If you don't have access to the browser, ask for help and refuse to do anything until you have access to the browser.
