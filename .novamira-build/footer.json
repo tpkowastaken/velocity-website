@@ -117,7 +117,7 @@
         "color": {
           "raw": "var(--signal)"
         },
-        "fontFamily": "var(--font-display)",
+        "fontFamily": "Bebas Neue",
         "fontSize": "44px",
         "lineHeight": "0.9",
         "letterSpacing": "0.02em"
@@ -141,7 +141,7 @@
         "color": {
           "raw": "var(--text-muted-inverse)"
         },
-        "fontFamily": "var(--font-body)",
+        "fontFamily": "Poppins",
         "fontSize": "15px",
         "lineHeight": "1.6"
       }
@@ -170,8 +170,7 @@
       "text": "Vyplnit dotazník",
       "link": {
         "type": "external",
-        "url": "https://dev.velocity.ooo/kontakt/",
-        "newTab": false
+        "url": "https://dev.velocity.ooo/kontakt/"
       },
       "style": "primary",
       "_background": {
@@ -183,7 +182,7 @@
         "color": {
           "raw": "var(--bedrock)"
         },
-        "fontFamily": "var(--font-body)",
+        "fontFamily": "Poppins",
         "fontWeight": "700",
         "fontSize": "15px"
       },
@@ -213,8 +212,7 @@
       "text": "604 620 011",
       "link": {
         "type": "external",
-        "url": "tel:+420604620011",
-        "newTab": false
+        "url": "tel:+420604620011"
       },
       "style": "outline",
       "_background": {
@@ -238,7 +236,7 @@
         "color": {
           "raw": "var(--voltage)"
         },
-        "fontFamily": "var(--font-body)",
+        "fontFamily": "Poppins",
         "fontWeight": "600",
         "fontSize": "15px"
       },
@@ -257,7 +255,7 @@
     "parent": "qnubi8",
     "children": [
       "jlcota",
-      "u6k331"
+      "tyfbot"
     ],
     "settings": {
       "_display": "flex",
@@ -299,14 +297,15 @@
     "children": [],
     "settings": {
       "image": {
-        "id": 27,
-        "url": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-white.svg",
-        "filename": "velocity-white.svg",
+        "id": 67,
+        "url": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-mark-white.svg",
+        "filename": "velocity-mark-white.svg",
         "size": "full",
-        "full": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-white.svg",
+        "full": "https://dev.velocity.ooo/wp-content/uploads/2026/07/velocity-mark-white.svg",
         "alt": "Velocity"
       },
-      "_height": "26px"
+      "_height": "26px",
+      "altText": "Velocity"
     }
   },
   {
@@ -320,25 +319,65 @@
         "color": {
           "raw": "var(--signal)"
         },
-        "fontFamily": "var(--font-display)",
+        "fontFamily": "Bebas Neue",
         "fontSize": "22px",
         "letterSpacing": "0.06em"
       }
     }
   },
   {
-    "id": "u6k331",
-    "name": "text-basic",
+    "id": "tyfbot",
+    "name": "div",
     "parent": "fvl4yu",
+    "children": [
+      "tyfcop",
+      "tyflnk"
+    ],
+    "settings": {
+      "_display": "flex",
+      "_direction": "row",
+      "_alignItems": "center",
+      "_flexWrap": "wrap",
+      "_columnGap": "var(--space-4)",
+      "_rowGap": "var(--space-2)"
+    },
+    "label": "Footer legal"
+  },
+  {
+    "id": "tyfcop",
+    "name": "text-basic",
+    "parent": "tyfbot",
     "children": [],
     "settings": {
-      "text": "© 2026 Velocity — marketingová & kreativní agentura",
+      "text": "© 2026 Velocity, marketingová & kreativní agentura",
       "_typography": {
         "color": {
           "raw": "var(--text-muted-inverse)"
         },
-        "fontSize": "13px"
+        "fontSize": "var(--text-sm)"
       }
+    }
+  },
+  {
+    "id": "tyflnk",
+    "name": "text-basic",
+    "parent": "tyfbot",
+    "children": [],
+    "settings": {
+      "text": "Typografie",
+      "link": {
+        "type": "internal",
+        "postId": "65"
+      },
+      "_typography": {
+        "color": {
+          "raw": "var(--text-muted-inverse)"
+        },
+        "fontFamily": "Poppins",
+        "fontSize": "var(--text-sm)",
+        "fontWeight": "500"
+      },
+      "_cssCustom": "%root% { transition: color 120ms ease; } %root%:hover { color: var(--voltage) !important; }"
     }
   }
 ]
