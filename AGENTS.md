@@ -10,6 +10,8 @@ Respect the local Rozestupy.dc.html file for spacing. It is the locked layout: b
 
 Build on the live development site. Update Typografie.dc.html, Rozestupy.dc.html, and this file when the user changes the standard.
 
+Richtext lists are the Gen Z Audit treatment, site-wide. Use a `text` element with `ul`/`li` and the global class `vx-audit-list`. The marker is a 1.5em disc: `var(--voltage)` on dark surfaces, `var(--voltage-deep)` on light ones (parent `vx-light-block`). Do not fake bullets with an em dash in `::before`.
+
 Use the browser to verify the changes you're making. If you don't have access to the browser, ask for help and refuse to do anything until you have access to the browser.
 
 ## Bricks element ids
