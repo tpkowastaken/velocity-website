@@ -65,7 +65,7 @@
 <header>
   <div class="page">
     <h1>ROZESTUPY</h1>
-    <p class="lede">Zamčený standard odsazení pro dev.velocity.ooo. Nové sekce používají tyto třídy a hodnoty. Jiný content width, gutter, hero padding nebo radius plátna se nepřidává.</p>
+    <p class="lede">Zamčený standard odsazení pro dev.velocity.ooo. Nové sekce používají tyto třídy a hodnoty. Jiný content width, gutter nebo radius plátna se nepřidává. Page hero centruje H1 do prvního viewportu a pod šipkou nechává jen 12px.</p>
   </div>
 </header>
 <main>
@@ -79,7 +79,7 @@
   <section>
     <div class="page">
       <h2>SLOUPEC</h2>
-      <p>Stejný sloupec používá homepage (<code>hcon01</code>), service hero (<code>vx-service-hero-inner</code>) a dlouhý text (<code>vx-audit-col</code>).</p>
+      <p>Stejný sloupec používá page hero (<code>vx-service-hero-inner</code>) a dlouhý text (<code>vx-audit-col</code>).</p>
       <div class="canvas" aria-hidden="true">
         <div class="band">
           <strong>1056px sloupec</strong><br>
@@ -102,9 +102,9 @@
             <td>ty samé třídy</td>
           </tr>
           <tr>
-            <td>Service hero, svisle</td>
-            <td><code>var(--space-hero)</code> = 96px nahoře i dole</td>
-            <td><code>vx-service-hero</code></td>
+            <td>Page hero, svisle</td>
+            <td>H1 vycentrované na střed prvního viewportu. Pod šipkou nebo CTA jen <code>var(--space-3)</code> = 12px. Žádné <code>min-height: 100vh</code>.</td>
+            <td><code>vx-page-hero</code> a <code>wp-content/novamira-sandbox/page-hero.php</code></td>
           </tr>
           <tr>
             <td>Dlouhý text, svisle</td>
@@ -125,7 +125,7 @@
     <div class="page">
       <h2>CO SE NEPŘIDÁVÁ NA ELEMENT</h2>
       <ul>
-        <li>Hero bez vlastního <code>_padding</code>. Padding drží třída <code>vx-service-hero</code>. Override na 0 nebo 36px hero zkrátí.</li>
+        <li>Hero bez vlastního <code>_padding</code>, <code>min-height</code> a font-size. Svislou pozici H1 drží třída <code>vx-page-hero</code> spolu s <code>page-hero.php</code>. Vlastní padding nebo <code>100vh</code> posune nadpis mimo střed a nechá prázdno pod šipkou.</li>
         <li>Vnitřek hero bez vlastního <code>_width</code> a <code>_widthMax</code>. Šířku drží <code>vx-service-hero-inner</code>. <code>width: 100%</code> a <code>max-width: var(--wrap)</code> text přitlačí k okraji.</li>
         <li>Žádný pixelový <code>max-width</code> ve <code>_cssCustom</code> na sloupci. Hodnota 976px na Gen Z auditu sloupec rozbila.</li>
         <li>Spojky mezi case studies na Referencích zůstávají nižší. Nejsou to content sloupce a na 88px se nenatahují.</li>

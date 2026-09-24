@@ -63,7 +63,7 @@ Grouped by concern under `components/`. All read the CSS custom properties; impo
 - **Pairing rule:** SIGNAL and CHROME are *never* paired with VOLTAGE. At most 1–2 background colours per composition.
 
 **Type.** Two families:
-- **Bebas Neue** — headings, bold statements. Line-height **~0.87**, small letter-spacing (0.02em default; 0.08em for all-caps buttons). Condensed, tall, all-caps energy.
+- **Bebas Neue** — headings, bold statements. Line-height **1.2**, small letter-spacing (0.02em default; 0.08em for all-caps buttons). Condensed, tall, all-caps energy. The 1.2 leading keeps Czech diacritics off the line above.
 - **Poppins** — body, accent/intro text, links. Line-height **0.80–1.10** for tight display body, up to 1.6 for paragraphs. Weights 300–700; italic for emphasis. Prices/numbers in semibold/bold.
 
 **Spacing.** Strict **4 / 8 px scale** (`--space-1` 4 → `--space-10` 128). Nothing off-scale appears. Section vertical padding 64–96px; horizontal 48px; card/heading gaps 24px; button/tag gaps 12px.
