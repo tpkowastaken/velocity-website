@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velocity — Rozestupy</title>
+<style>
+  :root {
+    --bedrock: #0b0b0b;
+    --signal: #f1f0ef;
+    --voltage: #cbff1e;
+    --text-muted: #6b6b68;
+    --border-subtle: #d8d7d4;
+    --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+    --font-body: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    --space-5: 24px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-xl: 48px;
+    --space-hero: 96px;
+    --space-section: 88px;
+    --wrap: 1200px;
+    --column: min(100%, calc(var(--wrap) * 0.8 + var(--space-xl) * 2));
+    --gutter: clamp(var(--space-5), 4vw, var(--space-xl));
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--signal);
+    color: var(--bedrock);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  header, main section { border-bottom: 1px solid var(--border-subtle); }
+  .page { max-width: 1200px; margin: 0 auto; padding: var(--space-8) var(--space-xl); }
+  h1, h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; line-height: 0.9; margin: 0; }
+  h1 { font-size: 56px; }
+  h2 { font-size: 34px; margin-bottom: 24px; }
+  h3 { font-size: 16px; margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  .lede { max-width: 640px; color: var(--text-muted); }
+  code { font-family: ui-monospace, monospace; font-size: 0.92em; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  th { font-size: 13px; letter-spacing: 0.04em; }
+  .canvas {
+    background: var(--bedrock);
+    color: var(--signal);
+    padding: 32px 0;
+  }
+  .band {
+    width: var(--column);
+    margin: 0 auto;
+    padding: 28px var(--gutter);
+    border: 1px dashed rgba(203, 255, 30, 0.7);
+  }
+  .band strong { color: var(--voltage); font-weight: 600; }
+  .note { font-size: 13px; color: var(--text-muted); }
+  ul { margin: 0; padding-left: 18px; }
+  li + li { margin-top: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="page">
+    <h1>ROZESTUPY</h1>
+    <p class="lede">Zamčený standard odsazení pro dev.velocity.ooo. Nové sekce používají tyto třídy a hodnoty. Jiný content width, gutter, hero padding nebo radius plátna se nepřidává.</p>
+  </div>
+</header>
+<main>
+  <section>
+    <div class="page">
+      <h2>PLÁTNO</h2>
+      <p>Pozadí dokumentu je bedrock <code>#0b0b0b</code>. V Bricks theme style <code>Velocity Gen Z</code> je nastavené jako <code>general.siteBackground</code>, takže <code>html</code> je černé a overscroll na mobilu zůstane černý. <code>customCss</code> na theme style Bricks ignoruje a pozadí nenabarví.</p>
+      <p>Plnobarevné sekce mají radius 0. Zaoblená sekce na černém plátně nechá v rozích světlé záseky. Karty na světlé ploše si nechávají <code>var(--radius-md)</code> (8px).</p>
+    </div>
+  </section>
+  <section>
+    <div class="page">
+      <h2>SLOUPEC</h2>
+      <p>Stejný sloupec používá homepage (<code>hcon01</code>), service hero (<code>vx-service-hero-inner</code>) a dlouhý text (<code>vx-audit-col</code>).</p>
+      <div class="canvas" aria-hidden="true">
+        <div class="band">
+          <strong>1056px sloupec</strong><br>
+          vodorovný padding 48px na 1440px, 24px na 390px. Text začíná 240px / 24px od okraje.
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Vlastnost</th><th>Hodnota</th><th>Kde žije</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Šířka</td>
+            <td><code>min(100%, calc(var(--wrap) * 0.8 + var(--space-xl) * 2))</code><br>1056px při wrap 1200px a space-xl 48px, vycentrované</td>
+            <td><code>vx-service-hero-inner</code>, <code>vx-audit-col</code></td>
+          </tr>
+          <tr>
+            <td>Vodorovný padding</td>
+            <td><code>clamp(var(--space-5), 4vw, var(--space-xl))</code><br>24px až 48px</td>
+            <td>ty samé třídy</td>
+          </tr>
+          <tr>
+            <td>Service hero, svisle</td>
+            <td><code>var(--space-hero)</code> = 96px nahoře i dole</td>
+            <td><code>vx-service-hero</code></td>
+          </tr>
+          <tr>
+            <td>Dlouhý text, svisle</td>
+            <td><code>var(--space-9)</code> = 96px, pod 900px <code>var(--space-8)</code> = 64px</td>
+            <td><code>vx-audit-col</code></td>
+          </tr>
+          <tr>
+            <td>Homepage pásy</td>
+            <td><code>var(--space-section)</code> = 88px</td>
+            <td>sekce pod hero</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Na 1440px text ve sloupci začíná 240px od levého okraje. Na 390px začíná 24px od okraje. Centrový manifest (Obsahová strategie, Produkce, Služby) sedí uvnitř stejného sloupce, proto je užší řádek nadpisu dál od okraje.</p>
+    </div>
+  </section>
+  <section>
+    <div class="page">
+      <h2>CO SE NEPŘIDÁVÁ NA ELEMENT</h2>
+      <ul>
+        <li>Hero bez vlastního <code>_padding</code>. Padding drží třída <code>vx-service-hero</code>. Override na 0 nebo 36px hero zkrátí.</li>
+        <li>Vnitřek hero bez vlastního <code>_width</code> a <code>_widthMax</code>. Šířku drží <code>vx-service-hero-inner</code>. <code>width: 100%</code> a <code>max-width: var(--wrap)</code> text přitlačí k okraji.</li>
+        <li>Žádný pixelový <code>max-width</code> ve <code>_cssCustom</code> na sloupci. Hodnota 976px na Gen Z auditu sloupec rozbila.</li>
+        <li>Spojky mezi case studies na Referencích zůstávají nižší. Nejsou to content sloupce a na 88px se nenatahují.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
