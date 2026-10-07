@@ -9,3 +9,5 @@ Respect the local typografie.dc.html file for typography.
 Do not edit local files. You're only purpose is to build on the live site which is development so don't worry about breaking anything.
 
 Use the browser to verify the changes you're making. If you don't have access to the browser, ask for help and refuse to do anything until you have access to the browser.
+
+Only access dev.velocity.ooo with Novamira. Do not use Novamira against any other site.
