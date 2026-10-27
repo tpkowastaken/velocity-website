@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/styles.css">
 <script src="_ds/velocity-clean-5a2675de-37a9-49a5-88f6-790dab2c9292/_ds_bundle.js"></script>
 <script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://tally.so/widgets/embed.js" async></script>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -474,6 +475,25 @@
       </section>
     </div>
     </sc-if>
+
+    <!-- ================= KONTAKT ================= -->
+    <sc-if value="{{ isKontakt }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <section style="background: var(--bedrock);">
+        <div class="vx-wrap vx-heropad" style="padding-top: 84px; padding-bottom: 80px;">
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--voltage); margin-bottom: 10px;">Kvalifikační dotazník</div>
+          <h1 class="vx-h1" style="font-family: var(--font-display); font-size: 76px; line-height: 0.87; letter-spacing: 0.01em; color: var(--signal); margin: 0; max-width: 900px;">ZJISTĚTE, JESTLI JSME PRO VÁS</h1>
+          <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-inverse); max-width: 560px; margin: 24px 0 0;">Vyplňte kvalifikační dotazník. Vyhodnocení a doporučení uvidíte hned po odeslání. Pokud dává spolupráce smysl, ozveme se do 24 hodin.</p>
+          <div style="margin-top: 36px; max-width: 720px; background: var(--signal); padding: 28px;">
+            <iframe data-tally-src="https://tally.so/embed/obN0gX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" src="https://tally.so/embed/obN0gX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="520" frameborder="0" title="Kvalifikační dotazník" style="border: 0; width: 100%; min-height: 520px; background: transparent;"></iframe>
+          </div>
+          <a href="tel:+420604620011" style="display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; padding: 15px 24px; border: 1.5px solid var(--voltage); color: var(--voltage); font-weight: 600;">
+            <span style="font-family: var(--font-display); font-size: 22px; letter-spacing: 0.02em; line-height: 1;">604 620 011</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    </sc-if>
   </main>
 
   <!-- FOOTER -->
@@ -482,7 +502,7 @@
       <div class="vx-split" style="grid-template-columns: 1.4fr 1fr; align-items: center; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border-inverse);">
         <div>
           <h3 style="font-family: var(--font-display); font-size: clamp(30px, 7vw, 44px); line-height: 0.9; letter-spacing: 0.02em; color: var(--signal); margin: 0 0 10px;">ZJISTĚTE, JESTLI JSME PRO VÁS</h3>
-          <p style="font-size: 15px; line-height: 1.55; color: var(--text-muted-inverse); max-width: 440px; margin: 0;">Sedm otázek. Podle odpovědí poznáte, jestli dává spolupráce smysl — a my se vám ozveme.</p>
+          <p style="font-size: 15px; line-height: 1.55; color: var(--text-muted-inverse); max-width: 440px; margin: 0;">Kvalifikační dotazník. Podle odpovědí poznáte, jestli dává spolupráce smysl — a my se vám ozveme.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <a href="#/kontakt" onClick="{{ openLead }}" style="display: flex; align-items: center; justify-content: center; padding: 18px; background: var(--voltage); color: var(--bedrock); font-weight: 700; font-size: 15px;">Vyplnit dotazník</a>
@@ -509,7 +529,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this._sync = () => {
       const h = (location.hash || '').replace('#/', '').replace('#', '');
-      const r = ['home', 'sluzby', 'reference', 'onas', 'audit', 'strategie', 'core'].includes(h) ? h : 'home';
+      const r = ['home', 'sluzby', 'reference', 'onas', 'audit', 'strategie', 'core', 'kontakt'].includes(h) ? h : 'home';
       this.setState({ route: r, menuOpen: false });
       window.scrollTo({ top: 0 });
     };
@@ -534,7 +554,7 @@ class Component extends DCLogic {
       const href = e.currentTarget.getAttribute('href') || '';
       if (href.startsWith('#/')) { e.preventDefault(); this.go(href.slice(2)); }
     };
-    const openLead = (e) => { e.preventDefault(); this.setState({ menuOpen: false }); alert('Dotazník „Zjistěte, jestli jsme pro vás" — 7 otázek. Formulář doplníme.'); };
+    const openLead = (e) => { e.preventDefault(); this.go('kontakt'); };
 
     const servicesFull = [
       { slug: 'audit', href: '#/audit', num: '01', title: 'Gen Z Audit', step: 'Kde jste teď', h2: 'ZMĚŘÍME, KDE OBSAH ZTRÁCÍ POZORNOST',
@@ -586,7 +606,7 @@ class Component extends DCLogic {
     const reels = reelDefs.map(r => ({ brand: r.brand, tag: r.tag, src: this.reelSrc(r.id, !!r.autoplay) }));
 
     return {
-      isHome: route === 'home', isSluzby: route === 'sluzby', isReference: route === 'reference', isOnas: route === 'onas',
+      isHome: route === 'home', isSluzby: route === 'sluzby', isReference: route === 'reference', isOnas: route === 'onas', isKontakt: route === 'kontakt',
       isServiceDetail, svc, serviceLinks, servicesFull,
       navHome: route === 'home' ? '1' : '0', navSluzby, navReference: route === 'reference' ? '1' : '0', navOnas: route === 'onas' ? '1' : '0',
       menuOpen: this.state.menuOpen, menuGlyph: this.state.menuOpen ? '×' : '≡',
