@@ -241,7 +241,7 @@ final class VDQ_Notion {
 			'Odesláno'            => array( 'date' => self::date( $row['submission_done_at'] ) ),
 			'Naposledy upraveno'  => array( 'date' => self::date( $row['last_edited_at'] ) ),
 			'Vytvořeno'           => array( 'date' => self::date( $row['created_at'] ) ),
-			'Krok'                => array( 'select' => $step ? array( 'name' => $step['title'] ) : null ),
+			'Krok'                => array( 'select' => $step ? array( 'name' => self::option_name( $step['title'] ) ) : null ),
 			'Cíle vyplněny'       => array( 'date' => self::date( isset( $a['_goals_done_at'] ) ? $a['_goals_done_at'] : null ) ),
 			'Připomínka odeslána' => array( 'date' => self::date( $row['reminder_sent_at'] ) ),
 			'Odhlášen z e-mailů'  => array( 'checkbox' => VDQ_Store::is_unsubscribed( $row['email'] ) ),
