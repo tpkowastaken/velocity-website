@@ -74,12 +74,17 @@ final class VDQ_Notion {
 	 * Schema
 	 * ------------------------------------------------------------------- */
 
+	/** Notion option names cannot contain commas. */
+	private static function option_name( $name ) {
+		return mb_substr( preg_replace( '/\s*,\s*/', ' – ', $name ), 0, 100 );
+	}
+
 	private static function select( array $names ) {
 		$colors = array( 'gray', 'brown', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'red' );
 		$out    = array();
 		foreach ( array_values( $names ) as $i => $n ) {
 			$out[] = array(
-				'name'  => mb_substr( str_replace( ',', ' ', $n ), 0, 100 ),
+				'name'  => self::option_name( $n ),
 				'color' => $colors[ $i % count( $colors ) ],
 			);
 		}
@@ -260,13 +265,13 @@ final class VDQ_Notion {
 					$props[ $name ] = array( 'checkbox' => (bool) $v );
 					break;
 				case 'single':
-					$props[ $name ] = array( 'select' => $filled ? array( 'name' => mb_substr( str_replace( ',', ' ', VDQ_Form::option_label( $q, $v ) ), 0, 100 ) ) : null );
+					$props[ $name ] = array( 'select' => $filled ? array( 'name' => self::option_name( VDQ_Form::option_label( $q, $v ) ) ) : null );
 					break;
 				case 'multi':
 				case 'social':
 					$names = array();
 					foreach ( $filled ? $v : array() as $x ) {
-						$names[] = array( 'name' => mb_substr( str_replace( ',', ' ', VDQ_Form::option_label( $q, $x ) ), 0, 100 ) );
+						$names[] = array( 'name' => self::option_name( VDQ_Form::option_label( $q, $x ) ) );
 					}
 					$props[ $name ] = array( 'multi_select' => $names );
 					break;
