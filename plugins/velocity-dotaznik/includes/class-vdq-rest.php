@@ -200,6 +200,7 @@ final class VDQ_Rest {
 			VDQ_Store::resubscribe( $row['email'] );
 		}
 		VDQ_Mailer::send_confirmation( $row );
+		VDQ_Mailer::send_notification( $row );
 		VDQ_Notion::queue( $row['id'] );
 		do_action( 'vdq_submitted', $row );
 		return self::state( $row );

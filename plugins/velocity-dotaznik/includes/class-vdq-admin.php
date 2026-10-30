@@ -429,6 +429,7 @@ final class VDQ_Admin {
 					self::field( 'from_name', 'Odesílatel (jméno)' );
 					self::field( 'reply_to', 'Odpovědi na (e-mail)', 'email' );
 					self::field( 'reply_name', 'Odpovědi na (jméno)' );
+					self::field( 'notify_email', 'Nové odeslané dotazníky posílat na', 'email', 'Při každém odeslání sem přijde e-mail se všemi odpověďmi.' );
 					self::field( 'resend_key_dev', 'Resend API klíč (dev)', 'password', 'Když je vyplněný, e-maily jdou přes <a href="https://resend.com" target="_blank">Resend</a>. Jinak přes wp_mail (sendmail hostingu).' );
 					self::field( 'resend_key_prod', 'Resend API klíč (prod)', 'password' );
 					self::field( 'reminder_hours', 'Připomínka po (hodinách)', 'number', 'Jedna připomínka nedokončeného dotazníku po této době nečinnosti.' );
@@ -485,6 +486,7 @@ final class VDQ_Admin {
 				<select name="kind">
 					<option value="reminder">Připomínka (4 h)</option>
 					<option value="confirmation">Potvrzení odeslání</option>
+					<option value="notification">Oznámení o novém dotazníku</option>
 				</select>
 				<button class="button">Poslat test</button>
 			</form>
@@ -527,7 +529,7 @@ final class VDQ_Admin {
 				$out[ $key ] = sanitize_text_field( $v );
 			} elseif ( 'reminder_hours' === $key ) {
 				$out[ $key ] = max( 1, (float) $v );
-			} elseif ( in_array( $key, array( 'from_email', 'reply_to' ), true ) ) {
+			} elseif ( in_array( $key, array( 'from_email', 'reply_to', 'notify_email' ), true ) ) {
 				$out[ $key ] = sanitize_email( $v );
 			} elseif ( in_array( $key, array( 'partner_url', 'posthog_host' ), true ) ) {
 				$out[ $key ] = esc_url_raw( $v );
@@ -567,9 +569,13 @@ final class VDQ_Admin {
 				'submission_done_at' => null,
 			);
 		}
-		$res = 'confirmation' === $kind
-			? VDQ_Mailer::send_confirmation( $row, $to )
-			: VDQ_Mailer::send_reminder( $row, VDQ_Store::token_for( $row['uuid'] ), $to );
+		if ( 'notification' === $kind ) {
+			$res = VDQ_Mailer::send_notification( $row, $to );
+		} elseif ( 'confirmation' === $kind ) {
+			$res = VDQ_Mailer::send_confirmation( $row, $to );
+		} else {
+			$res = VDQ_Mailer::send_reminder( $row, VDQ_Store::token_for( $row['uuid'] ), $to );
+		}
 		self::back(
 			'vdq-settings',
 			is_wp_error( $res ) ? array( 'vdq_msg' => 'Chyba: ' . $res->get_error_message(), 'vdq_err' => 1 ) : array( 'vdq_msg' => 'Testovací e-mail odeslán na ' . $to . '.' )

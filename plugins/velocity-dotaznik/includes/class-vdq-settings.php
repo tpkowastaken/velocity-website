@@ -27,8 +27,9 @@ final class VDQ_Settings {
 		return array(
 			'from_email'      => 'marketing@velocity.ooo',
 			'from_name'       => 'Velocity Marketing',
-			'reply_to'        => 'maty@velocity.ooo',
+			'reply_to'        => 'matyas@velocity.ooo',
 			'reply_name'      => 'Matyáš Brůna',
+			'notify_email'    => 'matyas@velocity.ooo',
 			'resend_key'      => '',
 			'resend_key_dev'  => '',
 			'resend_key_prod' => '',

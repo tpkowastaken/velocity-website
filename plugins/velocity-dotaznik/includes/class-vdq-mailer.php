@@ -133,17 +133,43 @@ final class VDQ_Mailer {
 		return self::send( $to, 'Dotazník máme, brzy se ozveme', $html, $text, 'confirmation' );
 	}
 
+	/** Tells the team about a new submission. Replying goes straight to the lead. */
+	public static function send_notification( array $row, $to = null ) {
+		$to = $to ? $to : VDQ_Settings::get( 'notify_email' );
+		if ( ! is_email( $to ) ) {
+			return new WP_Error( 'vdq_notify_off', 'Adresa pro oznámení není nastavená.' );
+		}
+		$answers = VDQ_Store::answers( $row );
+		$name    = isset( $answers['name'] ) ? trim( (string) $answers['name'] ) : '';
+		$lead    = $name ? $name . ' (' . $row['email'] . ')' : $row['email'];
+		$detail  = admin_url( 'admin.php?page=vdq&view=' . (int) $row['id'] );
+		$html    = '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#0b0b0b;"><p>Nový odeslaný dotazník: <strong>' . esc_html( $lead ) . '</strong></p><p><a href="' . esc_url( $detail ) . '">Detail ve WordPressu</a></p><table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">';
+		$text    = 'Nový odeslaný dotazník: ' . $lead . "\n" . $detail . "\n";
+		foreach ( VDQ_Form::grouped( $answers ) as $group ) {
+			$html .= '<tr><td colspan="2" style="padding-top:16px;font-weight:bold;">' . esc_html( $group['step'] ) . '</td></tr>';
+			$text .= "\n" . $group['step'] . "\n";
+			foreach ( $group['rows'] as $r ) {
+				$html .= '<tr><td style="vertical-align:top;color:#6b6b68;">' . esc_html( $r[0] ) . '</td><td style="vertical-align:top;">' . esc_html( $r[1] ) . '</td></tr>';
+				$text .= '- ' . $r[0] . ': ' . $r[1] . "\n";
+			}
+		}
+		$html .= '</table></div>';
+		return self::send( $to, 'Nový dotazník: ' . $lead, $html, $text, 'notification', $row['email'] );
+	}
+
 	/* ---------------------------------------------------------------------
 	 * Transport
 	 * ------------------------------------------------------------------- */
 
-	public static function send( $to, $subject, $html, $text, $kind ) {
-		if ( VDQ_Store::is_unsubscribed( $to ) ) {
+	/** @param string $reply_to Set for internal mail, which skips the unsubscribe handling. */
+	public static function send( $to, $subject, $html, $text, $kind, $reply_to = '' ) {
+		if ( ! $reply_to && VDQ_Store::is_unsubscribed( $to ) ) {
 			return new WP_Error( 'vdq_unsubscribed', 'Adresa je odhlášená.' );
 		}
 		$s         = VDQ_Settings::all();
 		$from      = sprintf( '%s <%s>', $s['from_name'], $s['from_email'] );
 		$reply     = $s['reply_name'] ? sprintf( '%s <%s>', $s['reply_name'], $s['reply_to'] ) : $s['reply_to'];
+		$reply     = $reply_to ? $reply_to : $reply;
 		$list_unsub = sprintf( '<%s>, <mailto:%s?subject=unsubscribe>', self::one_click_url( $to ), $s['from_email'] );
 
 		if ( ! empty( $s['resend_key'] ) ) {
@@ -163,7 +189,7 @@ final class VDQ_Mailer {
 							'subject'  => $subject,
 							'html'     => $html,
 							'text'     => $text,
-							'headers'  => array(
+							'headers'  => $reply_to ? new stdClass() : array(
 								'List-Unsubscribe'      => $list_unsub,
 								'List-Unsubscribe-Post' => 'List-Unsubscribe=One-Click',
 							),
@@ -197,12 +223,16 @@ final class VDQ_Mailer {
 			$to,
 			$subject,
 			$html,
-			array(
-				'Content-Type: text/html; charset=UTF-8',
-				'From: ' . $from,
-				'Reply-To: ' . $reply,
-				'List-Unsubscribe: ' . $list_unsub,
-				'List-Unsubscribe-Post: List-Unsubscribe=One-Click',
+			array_merge(
+				array(
+					'Content-Type: text/html; charset=UTF-8',
+					'From: ' . $from,
+					'Reply-To: ' . $reply,
+				),
+				$reply_to ? array() : array(
+					'List-Unsubscribe: ' . $list_unsub,
+					'List-Unsubscribe-Post: List-Unsubscribe=One-Click',
+				)
 			)
 		);
 		remove_action( 'phpmailer_init', $alt );
