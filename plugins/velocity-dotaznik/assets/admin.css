@@ -1,0 +1,23 @@
+.vdq-admin .vdq-muted{color:#646970}
+.vdq-admin .search-box{float:right;margin:8px 0}
+.vdq-admin .vdq-table{margin-top:12px}
+.vdq-admin .vdq-table td{vertical-align:top}
+.vdq-badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;line-height:1.6;background:#f0f0f1;color:#3c434a}
+.vdq-badge.is-done{background:#d7f5c2;color:#1d4a00}
+.vdq-badge.is-open{background:#fff3c4;color:#5c4400}
+.vdq-badge.is-empty{background:#f0f0f1;color:#646970}
+.vdq-badge.is-unsub{background:#fde2e1;color:#8a1f17}
+.vdq-detail{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
+@media (max-width:1100px){.vdq-detail{grid-template-columns:1fr}}
+.vdq-card{background:#fff;border:1px solid #dcdcde;border-radius:8px;padding:16px 20px;margin-bottom:16px}
+.vdq-card h2{margin:0 0 12px;font-size:15px}
+.vdq-answers{width:100%;border-collapse:collapse}
+.vdq-answers th,.vdq-answers td{text-align:left;vertical-align:top;padding:8px 0;border-top:1px solid #f0f0f1}
+.vdq-answers th{width:40%;padding-right:16px;font-weight:500;color:#646970}
+.vdq-detail-side dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:12px 0}
+.vdq-detail-side dt{color:#646970}
+.vdq-detail-side dd{margin:0}
+.vdq-actions-row{display:flex;gap:8px;flex-wrap:wrap}
+.vdq-inline-forms{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.vdq-inline-forms form{display:flex;gap:8px;align-items:center}
+.vdq-pre{background:#f6f7f7;padding:12px;max-height:260px;overflow:auto}
