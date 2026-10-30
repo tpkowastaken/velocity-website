@@ -5,6 +5,9 @@
  * Any key can be overridden in wp-config.php with a constant named
  * VDQ_<KEY in upper case>, e.g. define( 'VDQ_NOTION_SECRET', '...' ).
  *
+ * Credentials are stored per environment (<key>_dev, <key>_prod) in the same
+ * option, so a migration can copy it as is. The site URL picks the set.
+ *
  * @package VelocityDotaznik
  */
 
@@ -14,6 +17,12 @@ final class VDQ_Settings {
 
 	const OPTION = 'vdq_settings';
 
+	/** Keys resolved from <key>_dev or <key>_prod. */
+	const SCOPED = array( 'resend_key', 'notion_secret', 'notion_database' );
+
+	/** Hosts that use the production credentials. Any other host is dev. */
+	const PROD_HOSTS = array( 'velocity.ooo', 'www.velocity.ooo' );
+
 	public static function defaults() {
 		return array(
 			'from_email'      => 'marketing@velocity.ooo',
@@ -21,9 +30,15 @@ final class VDQ_Settings {
 			'reply_to'        => 'maty@velocity.ooo',
 			'reply_name'      => 'Matyáš Brůna',
 			'resend_key'      => '',
+			'resend_key_dev'  => '',
+			'resend_key_prod' => '',
 			'reminder_hours'  => 4,
 			'notion_secret'   => '',
 			'notion_database' => '',
+			'notion_secret_dev'    => '',
+			'notion_secret_prod'   => '',
+			'notion_database_dev'  => '',
+			'notion_database_prod' => '',
 			'partner_url'     => '',
 			'privacy_url'     => '/ochrana-osobnich-udaju/',
 			'posthog_key'     => 'phc_mjwZkz2mvXSPxjeTXmrDtb7dhcbz4aDYw5KoMgSdEWKL',
@@ -40,7 +55,18 @@ final class VDQ_Settings {
 				$all[ $key ] = constant( $const );
 			}
 		}
+		foreach ( self::SCOPED as $key ) {
+			if ( ! self::is_constant( $key ) ) {
+				$all[ $key ] = $all[ $key . '_' . self::env() ];
+			}
+		}
 		return $all;
+	}
+
+	/** @return string 'prod' or 'dev' */
+	public static function env() {
+		$host = strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
+		return in_array( $host, self::PROD_HOSTS, true ) ? 'prod' : 'dev';
 	}
 
 	public static function get( $key ) {

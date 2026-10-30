@@ -187,6 +187,12 @@ final class VDQ_Store {
 		return 1 === (int) $wpdb->query( $wpdb->prepare( "UPDATE $t SET reminder_sent_at = %s WHERE id = %d AND reminder_sent_at IS NULL", self::now(), $id ) );
 	}
 
+	/** Forgets Notion pages, so the next sync creates rows in the current database. */
+	public static function clear_notion_links() {
+		global $wpdb;
+		$wpdb->query( 'UPDATE ' . self::sessions_table() . " SET notion_page_id = '', notion_synced_at = NULL" );
+	}
+
 	/** Lets a failed reminder go out again on the next tick. */
 	public static function release_reminder( $id ) {
 		global $wpdb;

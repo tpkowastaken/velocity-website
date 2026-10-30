@@ -19,6 +19,16 @@ final class VDQ_Notion {
 
 	public static function init() {
 		add_action( 'vdq_notion_sync', array( __CLASS__, 'sync_id' ) );
+		add_action( 'init', array( __CLASS__, 'follow_database' ) );
+	}
+
+	/** Stops sessions from updating pages in a database this site no longer uses. */
+	public static function follow_database() {
+		$id = self::database_id();
+		if ( $id && get_option( 'vdq_notion_bound_db' ) !== $id ) {
+			VDQ_Store::clear_notion_links();
+			update_option( 'vdq_notion_bound_db', $id, false );
+		}
 	}
 
 	public static function configured() {

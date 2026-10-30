@@ -419,6 +419,7 @@ final class VDQ_Admin {
 		<div class="wrap vdq-admin">
 			<h1>Nastavení dotazníku</h1>
 			<?php self::notice(); ?>
+			<p>Prostředí podle adresy webu: <strong><?php echo esc_html( VDQ_Settings::env() ); ?></strong> (<?php echo esc_html( wp_parse_url( home_url(), PHP_URL_HOST ) ); ?>). Používají se přihlašovací údaje pro toto prostředí. Prod platí jen na <?php echo esc_html( implode( ' a ', VDQ_Settings::PROD_HOSTS ) ); ?>.</p>
 
 			<?php self::form_open( 'save_settings' ); ?>
 				<h2>E-maily</h2>
@@ -428,7 +429,8 @@ final class VDQ_Admin {
 					self::field( 'from_name', 'Odesílatel (jméno)' );
 					self::field( 'reply_to', 'Odpovědi na (e-mail)', 'email' );
 					self::field( 'reply_name', 'Odpovědi na (jméno)' );
-					self::field( 'resend_key', 'Resend API klíč', 'password', 'Když je vyplněný, e-maily jdou přes <a href="https://resend.com" target="_blank">Resend</a>. Jinak přes wp_mail (sendmail hostingu).' );
+					self::field( 'resend_key_dev', 'Resend API klíč (dev)', 'password', 'Když je vyplněný, e-maily jdou přes <a href="https://resend.com" target="_blank">Resend</a>. Jinak přes wp_mail (sendmail hostingu).' );
+					self::field( 'resend_key_prod', 'Resend API klíč (prod)', 'password' );
 					self::field( 'reminder_hours', 'Připomínka po (hodinách)', 'number', 'Jedna připomínka nedokončeného dotazníku po této době nečinnosti.' );
 					?>
 				</table>
@@ -436,8 +438,10 @@ final class VDQ_Admin {
 				<h2>Notion</h2>
 				<table class="form-table" role="presentation">
 					<?php
-					self::field( 'notion_secret', 'Notion integration secret', 'password', 'Vytvořte integraci na <a href="https://www.notion.so/profile/integrations" target="_blank">notion.so/profile/integrations</a> a databázi s ní sdílejte (… → Connections).' );
-					self::field( 'notion_database', 'Databáze (URL nebo ID)', 'text', VDQ_Notion::database_id() ? 'ID: <code>' . esc_html( VDQ_Notion::database_id() ) . '</code>' : '' );
+					self::field( 'notion_secret_dev', 'Notion integration secret (dev)', 'password', 'Vytvořte integraci na <a href="https://www.notion.so/profile/integrations" target="_blank">notion.so/profile/integrations</a> a databázi s ní sdílejte (… → Connections).' );
+					self::field( 'notion_database_dev', 'Databáze (dev, URL nebo ID)' );
+					self::field( 'notion_secret_prod', 'Notion integration secret (prod)', 'password' );
+					self::field( 'notion_database_prod', 'Databáze (prod, URL nebo ID)' );
 					?>
 				</table>
 
@@ -516,7 +520,7 @@ final class VDQ_Admin {
 				continue;
 			}
 			$v = trim( (string) $in[ $key ] );
-			if ( in_array( $key, array( 'resend_key', 'notion_secret' ), true ) ) {
+			if ( preg_match( '/^(resend_key|notion_secret)_/', $key ) ) {
 				if ( '' === $v ) {
 					continue; // Keep the stored secret.
 				}
