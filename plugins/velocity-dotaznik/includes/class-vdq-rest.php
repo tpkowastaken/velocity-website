@@ -200,8 +200,9 @@ final class VDQ_Rest {
 			VDQ_Store::resubscribe( $row['email'] );
 		}
 		VDQ_Mailer::send_confirmation( $row );
-		VDQ_Mailer::send_notification( $row );
-		VDQ_Notion::queue( $row['id'] );
+		// Synced first so the notification can link to the Notion page. A failure is retried by the cron tick.
+		VDQ_Notion::sync( $row );
+		VDQ_Mailer::send_notification( VDQ_Store::find( $row['id'] ) );
 		do_action( 'vdq_submitted', $row );
 		return self::state( $row );
 	}

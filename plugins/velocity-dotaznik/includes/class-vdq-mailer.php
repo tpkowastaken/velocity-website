@@ -143,8 +143,12 @@ final class VDQ_Mailer {
 		$name    = isset( $answers['name'] ) ? trim( (string) $answers['name'] ) : '';
 		$lead    = $name ? $name . ' (' . $row['email'] . ')' : $row['email'];
 		$detail  = admin_url( 'admin.php?page=vdq&view=' . (int) $row['id'] );
-		$html    = '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#0b0b0b;"><p>Nový odeslaný dotazník: <strong>' . esc_html( $lead ) . '</strong></p><p><a href="' . esc_url( $detail ) . '">Detail ve WordPressu</a></p><table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">';
-		$text    = 'Nový odeslaný dotazník: ' . $lead . "\n" . $detail . "\n";
+		$notion  = $row['notion_page_id'] ? 'https://www.notion.so/' . $row['notion_page_id'] : '';
+		$links   = '<a href="' . esc_url( $detail ) . '">Detail ve WordPressu</a>';
+		$links  .= $notion ? ' · <a href="' . esc_url( $notion ) . '">Otevřít v Notionu</a>' : '';
+		$html    = '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#0b0b0b;"><p>Nový odeslaný dotazník: <strong>' . esc_html( $lead ) . '</strong></p><p>' . $links . '</p><table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">';
+		$text    = 'Nový odeslaný dotazník: ' . $lead . "\nWordPress: " . $detail . "\n";
+		$text   .= $notion ? 'Notion: ' . $notion . "\n" : '';
 		foreach ( VDQ_Form::grouped( $answers ) as $group ) {
 			$html .= '<tr><td colspan="2" style="padding-top:16px;font-weight:bold;">' . esc_html( $group['step'] ) . '</td></tr>';
 			$text .= "\n" . $group['step'] . "\n";
